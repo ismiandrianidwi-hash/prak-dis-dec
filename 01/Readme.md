@@ -1,4 +1,4 @@
-#PRAKTIKUM MINGGU 01
+# PRAKTIKUM MINGGU 01
 
 Topik : Pengenalan git, instalansi github serta mengkonfigurasinya
 
