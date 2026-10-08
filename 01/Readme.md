@@ -15,3 +15,12 @@ Dalam penggunaannya, Git memiliki beberapa perintah dasar seperti git init untuk
 # 2. PRAKTIKUM
 ## 1. Instalansi Git
 ![alt text](image.png)
+Pada gambar tersebut merupakan tahap awal proses instalasi Git versi 2.56.0.2 pada sistem operasi Windows. Pada tahap ini ditampilkan informasi mengenai GNU General Public License (GPL) yang digunakan oleh Git. Untuk melanjutkan proses instalasi, pengguna dapat membaca informasi lisensi kemudian menekan tombol Install. Tahap ini menunjukkan bahwa installer Git sudah siap untuk melakukan proses pemasangan ke komputer.
+
+## 2. Pemeriksaan Instalansi Git
+<img width="170" height="113" alt="image" src="https://github.com/user-attachments/assets/0877af49-feb1-4362-a76d-323786291a21" />
+Pada tahap pemeriksaan instalasi, dilakukan pengecekan untuk memastikan Git telah berhasil terpasang pada komputer. Pemeriksaan dilakukan melalui Git Bash dengan menjalankan perintah git --version. Hasil yang ditampilkan berupa versi Git yang terpasang, sehingga dapat disimpulkan bahwa Git telah berhasil diinstal dan siap digunakan.
+
+## 3. Konfigurasi Git
+
+
