@@ -32,6 +32,12 @@ Pada tahap konfigurasi Git dilakukan pengaturan identitas pengguna berupa nama d
 
 ## 6. Membuat Repositori Github
 
+## 7. menghubungkan Repositori Lokal dengan GitHub
+
+## 8. Melakukan Push ke GitHub
+
+
+
 
 
 
