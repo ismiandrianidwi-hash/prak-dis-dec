@@ -1,2 +1,3 @@
 # PRAKTIKUM MINGGU 02
-Laporan praktikum minggu ke 2
+Laporan praktikum minggu kedua<br>
+Topik : Komunikasi Antar Proses pada Sistem Terdistribusi
