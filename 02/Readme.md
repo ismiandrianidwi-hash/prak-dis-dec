@@ -1,1 +1,1 @@
-MINGGU KEDUA
+
