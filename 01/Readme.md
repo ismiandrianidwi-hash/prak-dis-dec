@@ -26,7 +26,12 @@ Pada tahap pemeriksaan instalasi, dilakukan pengecekan untuk memastikan Git tela
 Pada tahap konfigurasi Git dilakukan pengaturan identitas pengguna berupa nama dan email menggunakan perintah git config --global. Konfigurasi ini digunakan untuk memberikan identitas pada setiap perubahan atau commit yang dibuat. Setelah konfigurasi dilakukan, pengaturan diperiksa menggunakan perintah git config --list untuk memastikan nama dan email telah tersimpan dengan benar.
 
 ## 4. Mengelola Repo Sendiri di Account Sendiri
-Langkah-langkah: <b><br>
+Langkah-langkah:<br>
+1. Buat repo kosong di Github, public maupun private
+2. Clone repo kosong tersebut di komputer lokal
+3. Perintah berikutnya terkait dengan perubahan repo serta sinkronisasi antara GitHub dengan lokal.
+
+### Membuat Repo
 
 ## 5. Membuat Commit
 
