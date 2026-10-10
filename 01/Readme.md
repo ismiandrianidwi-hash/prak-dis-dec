@@ -22,7 +22,7 @@ Dalam penggunaannya, Git memiliki beberapa perintah dasar seperti git init untuk
 Pada gambar tersebut merupakan tahap awal proses instalasi Git versi 2.56.0.2 pada sistem operasi Windows. Pada tahap ini ditampilkan informasi mengenai GNU General Public License (GPL) yang digunakan oleh Git. Untuk melanjutkan proses instalasi, pengguna dapat membaca informasi lisensi kemudian menekan tombol Install. Tahap ini menunjukkan bahwa installer Git sudah siap untuk melakukan proses pemasangan ke komputer.
 
 ## 2. Pemilihan Komponen yang Akan Di Install
-<img width="493" height="379" alt="image" src="https://github.com/user-attachments/assets/c6f4cb15-b254-40e7-9b8e-7b09637ea630" /><br>
+<img width="413" height="315" alt="image" src="https://github.com/user-attachments/assets/9a0adb04-4267-4977-acdc-a5523f2e5101" /><br>
 Pembahasan : Pada tahap ini, pengguna memilih komponen tambahan yang akan diinstal bersama Git, seperti integrasi Git Bash Here dan asosiasi file. Pengaturan bawaan (default) sudah cukup optimal dan dapat langsung dilanjutkan ke tahap berikutnya.
 
 ## 3. Proses Installing
