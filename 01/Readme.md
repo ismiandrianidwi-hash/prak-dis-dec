@@ -1,4 +1,7 @@
 # PRAKTIKUM MINGGU 01
+Nama  : Dwi Ismi Andriani<br>
+Nim   : 255410012<br>
+Kelas : Informatka - 1<br>
 Laporan praktikum minggu pertama<br>
 Topik : Pengenalan git, instalansi github serta mengkonfigurasinya
 
@@ -13,6 +16,7 @@ Setelah Git berhasil diinstal, keberhasilan instalasi dapat diperiksa menggunaka
 Dalam penggunaannya, Git memiliki beberapa perintah dasar seperti git init untuk membuat repository, git add untuk menambahkan perubahan ke staging area, git commit untuk menyimpan perubahan ke dalam riwayat Git, serta git push untuk mengirim perubahan ke repository online seperti GitHub.<br>
 
 # 2. PRAKTIKUM
+# INSTALANSI GIT
 ## 1. Instalansi Git
 ![alt text](image.png)
 Pada gambar tersebut merupakan tahap awal proses instalasi Git versi 2.56.0.2 pada sistem operasi Windows. Pada tahap ini ditampilkan informasi mengenai GNU General Public License (GPL) yang digunakan oleh Git. Untuk melanjutkan proses instalasi, pengguna dapat membaca informasi lisensi kemudian menekan tombol Install. Tahap ini menunjukkan bahwa installer Git sudah siap untuk melakukan proses pemasangan ke komputer.
