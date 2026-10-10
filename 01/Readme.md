@@ -36,7 +36,7 @@ Langkah-langkah:<br>
 <img width="142" height="227" alt="image" src="https://github.com/user-attachments/assets/029a1868-c993-4635-bf17-bdf7e8de332f" /><br>
 Pembuatan repository di GitHub dimulai dengan memilih menu New repository dari ikon + di bagian atas setelah login. Selanjutnya, isi detail proyek seperti nama, deskripsi, lisensi, serta visibilitas (Public atau Private).
 
-2. Isikan nama, keterangan, serta lisensi. Jika dikehendaki, bisa membuat repo Private
+2. Isikan nama, keterangan, serta lisensi. Jika dikehendaki, bisa membuat repo Private<br>
    <img width="289" height="417" alt="image" src="https://github.com/user-attachments/assets/d346c6b0-ade0-4ced-952f-d8f0c7fc56ec" />
 
 3. Klik Create Repository
