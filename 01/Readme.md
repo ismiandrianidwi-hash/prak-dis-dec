@@ -1,7 +1,7 @@
 # PRAKTIKUM MINGGU 01
 Nama  : Dwi Ismi Andriani<br>
 Nim   : 255410012<br>
-Kelas : Informatka - 1<br>
+Kelas : Informatika - 1<br>
 <br>Laporan praktikum minggu pertama<br>
 Topik : Pengenalan git, instalansi github serta mengkonfigurasinya
 
@@ -86,7 +86,10 @@ Langkah-langkah:<br>
 3. Buka terminal VS Code atau Git Bash.
 4. Jalankan perintah berikut dengan mengganti URL sesuai repository.<br>
 <img width="195" height="159" alt="image" src="https://github.com/user-attachments/assets/7f102b3a-e924-4c9c-a651-27a5e08d7e02" /><br>
-5. Masuk ke folder repository:
+5. Pilih akan ditempatkan di account mana.:<br>
+<img width="365" height="278" alt="Screenshot 2026-10-10 204902" src="https://github.com/user-attachments/assets/b8f628dc-874c-48d5-bcc7-cefc91c16a27" /><br>
+
+
    
 
 
