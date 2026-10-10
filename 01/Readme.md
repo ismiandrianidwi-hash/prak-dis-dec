@@ -25,8 +25,8 @@ Pada tahap pemeriksaan instalasi, dilakukan pengecekan untuk memastikan Git tela
 <img width="341" height="174" alt="image" src="https://github.com/user-attachments/assets/60442d46-7e63-4eb0-aa79-e1aac3c11420" /><br>
 Pada tahap konfigurasi Git dilakukan pengaturan identitas pengguna berupa nama dan email menggunakan perintah git config --global. Konfigurasi ini digunakan untuk memberikan identitas pada setiap perubahan atau commit yang dibuat. Setelah konfigurasi dilakukan, pengaturan diperiksa menggunakan perintah git config --list untuk memastikan nama dan email telah tersimpan dengan benar.
 
-## 4. Membuat Repositori Lokal
-
+## 4. Mengelola Repo Sendiri di Account Sendiri
+Langkah-langkah: <b><br>
 
 ## 5. Membuat Commit
 
