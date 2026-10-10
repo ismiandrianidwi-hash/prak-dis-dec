@@ -37,30 +37,21 @@ Langkah-langkah:<br>
 Pembuatan repository di GitHub dimulai dengan memilih menu New repository dari ikon + di bagian atas setelah login. Selanjutnya, isi detail proyek seperti nama, deskripsi, lisensi, serta visibilitas (Public atau Private).
 
 2. Isikan nama, keterangan, serta lisensi. Jika dikehendaki, bisa membuat repo Private<br>
-   <img width="289" height="417" alt="image" src="https://github.com/user-attachments/assets/d346c6b0-ade0-4ced-952f-d8f0c7fc56ec" />
+   <img width="455" height="206" alt="image" src="https://github.com/user-attachments/assets/f224fae9-aade-46b0-80b8-02133ddbf608" />
+   Untuk bagian ini saya lupa screenshot saat membuat repositori, jadi saya buat diterminal command prompt. 
 
 3. Klik Create Repository
   Setelah menekan tombol Create Repository, GitHub akan membuat repository baru sesuai konfigurasi yang ditentukan. Jika dibuat menggunakan pilihan default (tanpa mengaktifkan README, .gitignore, atau LICENSE), GitHub akan menghasilkan repository kosong dan menampilkan halaman petunjuk awal. Halaman tersebut     berisi alamat URL repository dengan format :<br>
 [https://github.com/username/nama-repo](https://github.com/username/nama-repo)) yang siap digunakan untuk proses cloning ke komputer lokal.<br>
-<img width="426" height="173" alt="image" src="https://github.com/user-attachments/assets/b7069427-b397-4e21-b6e9-7b47d639ecaf" />
+   <img width="426" height="173" alt="image" src="https://github.com/user-attachments/assets/b7069427-b397-4e21-b6e9-7b47d639ecaf" />
 
 
 ### Clone Repo
 Proses clone digunakan untuk menduplikasikan remote repository dari GitHub ke komputer lokal. Langkah ini dilakukan dengan menjalankan perintah git clone <URL-repo> pada terminal atau command line.<br>
 <img width="605" height="167" alt="image" src="https://github.com/user-attachments/assets/17007712-f867-4e98-9696-1772156685a9" />
 
+### Mengelola Repo
 
-
-
-
-
-## 5. Membuat Commit
-
-## 6. Membuat Repositori Github
-
-## 7. menghubungkan Repositori Lokal dengan GitHub
-
-## 8. Melakukan Push ke GitHub
 
 
 
