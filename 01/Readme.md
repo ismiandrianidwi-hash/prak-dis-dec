@@ -32,6 +32,11 @@ Langkah-langkah:<br>
 3. Perintah berikutnya terkait dengan perubahan repo serta sinkronisasi antara GitHub dengan lokal.
 
 ### Membuat Repo
+1. Klik tanda + pada bagian atas setelah login, pilih New repository
+<img width="142" height="227" alt="image" src="https://github.com/user-attachments/assets/029a1868-c993-4635-bf17-bdf7e8de332f" />
+Pembuatan repository di GitHub dimulai dengan memilih menu New repository dari ikon + di bagian atas setelah login. Selanjutnya, isi detail proyek seperti nama, deskripsi, lisensi, serta visibilitas (Public atau Private).
+
+2. Isikan nama, keterangan, serta lisensi. Jika dikehendaki, bisa membuat repo Private
 
 ## 5. Membuat Commit
 
