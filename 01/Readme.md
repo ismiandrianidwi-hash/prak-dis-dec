@@ -2,7 +2,7 @@
 Nama  : Dwi Ismi Andriani<br>
 Nim   : 255410012<br>
 Kelas : Informatka - 1<br>
-Laporan praktikum minggu pertama<br>
+<br>Laporan praktikum minggu pertama<br>
 Topik : Pengenalan git, instalansi github serta mengkonfigurasinya
 
 # 1. PENDAHULUAN
@@ -18,18 +18,31 @@ Dalam penggunaannya, Git memiliki beberapa perintah dasar seperti git init untuk
 # 2. PRAKTIKUM
 # INSTALANSI GIT
 ## 1. Instalansi Git
-![alt text](image.png)
+<img width="493" height="379" alt="Screenshot 2026-10-10 195011" src="https://github.com/user-attachments/assets/392e229f-4df1-4b28-a143-2864ff8a019b" /><br>
 Pada gambar tersebut merupakan tahap awal proses instalasi Git versi 2.56.0.2 pada sistem operasi Windows. Pada tahap ini ditampilkan informasi mengenai GNU General Public License (GPL) yang digunakan oleh Git. Untuk melanjutkan proses instalasi, pengguna dapat membaca informasi lisensi kemudian menekan tombol Install. Tahap ini menunjukkan bahwa installer Git sudah siap untuk melakukan proses pemasangan ke komputer.
 
-## 2. Pemeriksaan Instalansi Git
+## 2. Pemilihan Komponen yang Akan Di Install
+<img width="493" height="379" alt="image" src="https://github.com/user-attachments/assets/c6f4cb15-b254-40e7-9b8e-7b09637ea630" /><br>
+Pembahasan : Pada tahap ini, pengguna memilih komponen tambahan yang akan diinstal bersama Git, seperti integrasi Git Bash Here dan asosiasi file. Pengaturan bawaan (default) sudah cukup optimal dan dapat langsung dilanjutkan ke tahap berikutnya.
+
+## 3. Proses Installing
+<img width="493" height="379" alt="image" src="https://github.com/user-attachments/assets/2a0fbda3-4de8-4b67-8bc7-2f9eb554f864" /><br>
+Pembahasan : Pada tahap ini, sistem melakukan penyalinan dan pemasangan file-file utama Git ke dalam direktori komputer secara otomatis. Proses ini mencakup ekstraksi paket instalasi, konfigurasi komponen pendukung, serta pembuatan shortcut agar perangkat lunak siap digunakan.
+
+## 4. Finish
+<img width="491" height="380" alt="image" src="https://github.com/user-attachments/assets/45d7143c-94e6-4c57-8a90-761e79cf6929" /><br>
+Pembahasan : Pada tahap ini, proses instalasi Git telah selesai.
+
+## 5. Pemeriksaan Instalansi Git
 <img width="170" height="113" alt="image" src="https://github.com/user-attachments/assets/0877af49-feb1-4362-a76d-323786291a21" /><br>
-Pada tahap pemeriksaan instalasi, dilakukan pengecekan untuk memastikan Git telah berhasil terpasang pada komputer. Pemeriksaan dilakukan melalui Git Bash dengan menjalankan perintah git --version. Hasil yang ditampilkan berupa versi Git yang terpasang, sehingga dapat disimpulkan bahwa Git telah berhasil diinstal dan siap digunakan.
+Pembahasan : Pada tahap pemeriksaan instalasi, dilakukan pengecekan untuk memastikan Git telah berhasil terpasang pada komputer. Pemeriksaan dilakukan melalui Git Bash dengan menjalankan perintah git --version. Hasil yang ditampilkan berupa versi Git yang terpasang, sehingga dapat disimpulkan bahwa Git telah berhasil diinstal dan siap digunakan.
 
-## 3. Konfigurasi Git
+## 4. Konfigurasi Git
 <img width="341" height="174" alt="image" src="https://github.com/user-attachments/assets/60442d46-7e63-4eb0-aa79-e1aac3c11420" /><br>
-Pada tahap konfigurasi Git dilakukan pengaturan identitas pengguna berupa nama dan email menggunakan perintah git config --global. Konfigurasi ini digunakan untuk memberikan identitas pada setiap perubahan atau commit yang dibuat. Setelah konfigurasi dilakukan, pengaturan diperiksa menggunakan perintah git config --list untuk memastikan nama dan email telah tersimpan dengan benar.
+Pembahasan : Pada tahap konfigurasi Git dilakukan pengaturan identitas pengguna berupa nama dan email menggunakan perintah git config --global. Konfigurasi ini digunakan untuk memberikan identitas pada setiap perubahan atau commit yang dibuat. Setelah konfigurasi dilakukan, pengaturan diperiksa menggunakan perintah git config --list untuk memastikan nama dan email telah tersimpan dengan benar.
 
-## 4. Mengelola Repo Sendiri di Account Sendiri
+# MENGELOLA REPO DI AKUN SENDIRI
+## Mengelola Repo Sendiri di Account Sendiri
 Langkah-langkah:<br>
 1. Buat repo kosong di Github, public maupun private
 2. Clone repo kosong tersebut di komputer lokal
@@ -53,12 +66,6 @@ Proses clone digunakan untuk menduplikasikan remote repository dari GitHub ke ko
 <img width="605" height="167" alt="image" src="https://github.com/user-attachments/assets/17007712-f867-4e98-9696-1772156685a9" />
 
 ### Mengelola Repo
-Pengelolaan repository dilakukan di komputer lokal setelah proses clone dengan memutar siklus edit, add, commit, dan push ke GitHub. Pengelolaan ini dapat dilakukan langsung pada branch utama atau lebih aman melalui metode branching and merging yang memanfaatkan Pull Request. Selain itu, alur pengelolaan mencakup proses sinkronisasi (git pull) serta pembatalan perubahan lokal maupun commit yang sudah di-push menggunakan perintah git reset atau git revert.<br>
+Pengelolaan repository dilakukan di komputer lokal setelah proses clone dengan memutar siklus edit, add, commit, dan push ke GitHub. Pengelolaan ini dapat dilakukan langsung pada branch utama atau lebih aman melalui metode branching and merging yang memanfaatkan Pull Request. Selain itu, alur pengelolaan mencakup proses sinkronisasi (git pull) serta pembatalan perubahan lokal maupun commit yang sudah di-push menggunakan perintah git reset atau git revert.
 
-
-
-
-
-
-
-
+# MENGELOLA REPO SENDIRI DI ORGANISASI
