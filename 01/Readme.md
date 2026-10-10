@@ -32,19 +32,26 @@ Langkah-langkah:<br>
 3. Perintah berikutnya terkait dengan perubahan repo serta sinkronisasi antara GitHub dengan lokal.
 
 ### Membuat Repo
-1. Klik tanda + pada bagian atas setelah login, pilih New repository
-<img width="142" height="227" alt="image" src="https://github.com/user-attachments/assets/029a1868-c993-4635-bf17-bdf7e8de332f" />
-Pembuatan repository di GitHub dimulai dengan memilih menu New repository dari ikon + di bagian atas setelah login. Selanjutnya, isi detail proyek seperti nama, deskripsi, lisensi, serta visibilitas (Public atau Private).
+1. Klik tanda + pada bagian atas setelah login, pilih New repository <br>
+   <img width="142" height="227" alt="image" src="https://github.com/user-attachments/assets/029a1868-c993-4635-bf17-bdf7e8de332f" /><br>
+   Pembuatan repository di GitHub dimulai dengan memilih menu New repository dari ikon + di bagian atas setelah login. Selanjutnya, isi detail proyek seperti nama, deskripsi, lisensi,        serta visibilitas (Public atau Private).
 
-2. Isikan nama, keterangan, serta lisensi. Jika dikehendaki, bisa membuat repo Private
+2. Isikan nama, keterangan, serta lisensi. Jika dikehendaki, bisa membuat repo Private<br>
+   <img width="426" height="173" alt="image" src="https://github.com/user-attachments/assets/b7069427-b397-4e21-b6e9-7b47d639ecaf" /> <br>
+   Untuk bagian ini saya lupa screenshot saat membuat repositori, jadi saya buat diterminal command prompt. 
 
-## 5. Membuat Commit
+3. Klik Create Repository<br>
+  Setelah menekan tombol Create Repository, GitHub akan membuat repository baru sesuai konfigurasi yang ditentukan. Jika dibuat menggunakan pilihan default (tanpa mengaktifkan README,       .gitignore, atau LICENSE), GitHub akan menghasilkan repository kosong dan menampilkan halaman petunjuk awal. Halaman tersebut     berisi alamat URL repository dengan format :<br>
+   [https://github.com/username/nama-repo](https://github.com/username/nama-repo)) yang siap digunakan untuk proses cloning ke komputer lokal.<br>
 
-## 6. Membuat Repositori Github
+### Clone Repo
+Proses clone digunakan untuk menduplikasikan remote repository dari GitHub ke komputer lokal. Langkah ini dilakukan dengan menjalankan perintah git clone <URL-repo> pada terminal atau command line.<br>
+<img width="605" height="167" alt="image" src="https://github.com/user-attachments/assets/17007712-f867-4e98-9696-1772156685a9" />
 
-## 7. menghubungkan Repositori Lokal dengan GitHub
+### Mengelola Repo
+Pengelolaan repository dilakukan di komputer lokal setelah proses clone dengan memutar siklus edit, add, commit, dan push ke GitHub. Pengelolaan ini dapat dilakukan langsung pada branch utama atau lebih aman melalui metode branching and merging yang memanfaatkan Pull Request. Selain itu, alur pengelolaan mencakup proses sinkronisasi (git pull) serta pembatalan perubahan lokal maupun commit yang sudah di-push menggunakan perintah git reset atau git revert.<br>
 
-## 8. Melakukan Push ke GitHub
+
 
 
 
