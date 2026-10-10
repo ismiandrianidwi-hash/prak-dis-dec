@@ -93,7 +93,7 @@ Langkah-langkah:<br>
    <br>
    Pembahasan : Pada tahap ini, dilakukan proses clone repository untuk menyalin repository dari GitHub ke komputer lokal. Proses dimulai dengan menyalin URL HTTPS repository hasil fork, kemudian menjalankan perintah      git clone melalui terminal. Berdasarkan hasil praktikum, repository berhasil disalin ke komputer lokal sehingga file dan riwayat Git dapat dikelola melalui terminal atau Visual Studio Code. Proses ini menjadi           langkah awal untuk melakukan perubahan, commit, dan sinkronisasi antara repository lokal dengan GitHub.
    
-# KESIMPULAN 
+# 4. KESIMPULAN 
 Berdasarkan praktikum minggu pertama, dapat disimpulkan bahwa Git berhasil dipelajari mulai dari proses instalasi, pemeriksaan versi, hingga konfigurasi identitas pengguna. Selain itu, praktikum ini memberikan pemahaman mengenai cara membuat repository di GitHub, melakukan clone ke komputer lokal, serta mengelola repository melalui terminal. Praktikum juga mengenalkan pengelolaan repository pada akun organisasi dan penggunaan fork serta clone untuk mendukung kolaborasi. Dengan demikian, Git dan GitHub dapat digunakan untuk mengelola perubahan file, menyimpan riwayat proyek, serta mempermudah sinkronisasi dan kerja sama dalam pengembangan proyek.
 
 
