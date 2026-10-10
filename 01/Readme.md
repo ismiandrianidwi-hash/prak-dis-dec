@@ -90,8 +90,11 @@ Langkah-langkah:<br>
    <img width="475" height="214" alt="image" src="https://github.com/user-attachments/assets/2c552122-7a5f-414d-a7c9-793300be4596" /><br>
    Setelah proses tersebut, clone di komputer lokal:<br>
    <img width="657" height="139" alt="Screenshot 2026-10-10 210814" src="https://github.com/user-attachments/assets/aa932558-0470-4730-8b79-3797afb3a72c" />
+   <br>
+   Pembahasan : Pada tahap ini, dilakukan proses clone repository untuk menyalin repository dari GitHub ke komputer lokal. Proses dimulai dengan menyalin URL HTTPS repository hasil fork, kemudian menjalankan perintah      git clone melalui terminal. Berdasarkan hasil praktikum, repository berhasil disalin ke komputer lokal sehingga file dan riwayat Git dapat dikelola melalui terminal atau Visual Studio Code. Proses ini menjadi           langkah awal untuk melakukan perubahan, commit, dan sinkronisasi antara repository lokal dengan GitHub.
    
-
+# KESIMPULAN 
+Berdasarkan praktikum minggu pertama, dapat disimpulkan bahwa Git berhasil dipelajari mulai dari proses instalasi, pemeriksaan versi, hingga konfigurasi identitas pengguna. Selain itu, praktikum ini memberikan pemahaman mengenai cara membuat repository di GitHub, melakukan clone ke komputer lokal, serta mengelola repository melalui terminal. Praktikum juga mengenalkan pengelolaan repository pada akun organisasi dan penggunaan fork serta clone untuk mendukung kolaborasi. Dengan demikian, Git dan GitHub dapat digunakan untuk mengelola perubahan file, menyimpan riwayat proyek, serta mempermudah sinkronisasi dan kerja sama dalam pengembangan proyek.
 
 
 
