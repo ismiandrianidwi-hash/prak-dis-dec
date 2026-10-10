@@ -82,12 +82,17 @@ Pembahasan : Fork digunakan untuk membuat salinan repository milik pengguna lain
 Tujuan: Mengunduh repository hasil fork ke komputer lokal.<br>
 Langkah-langkah:<br>
 1. Buka repository hasil fork di akun GitHub kamu.
-2. Klik tombol Code, kemudian salin URL HTTPS repository.
-3. Buka terminal VS Code atau Git Bash.
-4. Jalankan perintah berikut dengan mengganti URL sesuai repository.<br>
-<img width="195" height="159" alt="image" src="https://github.com/user-attachments/assets/7f102b3a-e924-4c9c-a651-27a5e08d7e02" /><br>
-5. Pilih akan ditempatkan di account mana.:<br>
-<img width="365" height="278" alt="Screenshot 2026-10-10 204902" src="https://github.com/user-attachments/assets/b8f628dc-874c-48d5-bcc7-cefc91c16a27" /><br>
+2. Klik tombol Code, kemudian salin URL HTTPS repository.<br>
+   <img width="195" height="159" alt="Screenshot 2026-10-10 205001" src="https://github.com/user-attachments/assets/e0b4fbd8-81d3-447a-b613-503af84535cb" />
+6. Pilih akan ditempatkan di account mana.:<br>
+   <img width="365" height="278" alt="Screenshot 2026-10-10 204902" src="https://github.com/user-attachments/assets/b8f628dc-874c-48d5-bcc7-cefc91c16a27" />
+7. Setelah proses, repo dari upstream author sudah berada di account GitHub kita (kontributor)<br>
+   <img width="475" height="214" alt="image" src="https://github.com/user-attachments/assets/2c552122-7a5f-414d-a7c9-793300be4596" /><br>
+   Setelah proses tersebut, clone di komputer lokal:<br>
+   <img width="657" height="139" alt="Screenshot 2026-10-10 210814" src="https://github.com/user-attachments/assets/aa932558-0470-4730-8b79-3797afb3a72c" />
+   
+
+
 
 
    
