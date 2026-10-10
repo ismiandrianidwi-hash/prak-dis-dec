@@ -40,7 +40,7 @@ Pembuatan repository di GitHub dimulai dengan memilih menu New repository dari i
    <img width="426" height="173" alt="image" src="https://github.com/user-attachments/assets/b7069427-b397-4e21-b6e9-7b47d639ecaf" /><br>
    Untuk bagian ini saya lupa screenshot saat membuat repositori, jadi saya buat diterminal command prompt. 
 
-3. Klik Create Repository
+3. Klik Create Repository<br>
   Setelah menekan tombol Create Repository, GitHub akan membuat repository baru sesuai konfigurasi yang ditentukan. Jika dibuat menggunakan pilihan default (tanpa mengaktifkan README, .gitignore, atau LICENSE), GitHub akan menghasilkan repository kosong dan menampilkan halaman petunjuk awal. Halaman tersebut     berisi alamat URL repository dengan format :<br>
 [https://github.com/username/nama-repo](https://github.com/username/nama-repo)) yang siap digunakan untuk proses cloning ke komputer lokal.<br>
 
