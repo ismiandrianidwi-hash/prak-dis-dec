@@ -41,7 +41,7 @@ Pembahasan : Pada tahap pemeriksaan instalasi, dilakukan pengecekan untuk memast
 <img width="341" height="174" alt="image" src="https://github.com/user-attachments/assets/60442d46-7e63-4eb0-aa79-e1aac3c11420" /><br>
 Pembahasan : Pada tahap konfigurasi Git dilakukan pengaturan identitas pengguna berupa nama dan email menggunakan perintah git config --global. Konfigurasi ini digunakan untuk memberikan identitas pada setiap perubahan atau commit yang dibuat. Setelah konfigurasi dilakukan, pengaturan diperiksa menggunakan perintah git config --list untuk memastikan nama dan email telah tersimpan dengan benar.
 
-# MENGELOLA REPO DI AKUN SENDIRI
+# MENGELOLA REPO SENDIRI DI AKUN SENDIRI
 ## Mengelola Repo Sendiri di Account Sendiri
 Langkah-langkah:<br>
 1. Buat repo kosong di Github, public maupun private
@@ -69,3 +69,24 @@ Proses clone digunakan untuk menduplikasikan remote repository dari GitHub ke ko
 Pengelolaan repository dilakukan di komputer lokal setelah proses clone dengan memutar siklus edit, add, commit, dan push ke GitHub. Pengelolaan ini dapat dilakukan langsung pada branch utama atau lebih aman melalui metode branching and merging yang memanfaatkan Pull Request. Selain itu, alur pengelolaan mencakup proses sinkronisasi (git pull) serta pembatalan perubahan lokal maupun commit yang sudah di-push menggunakan perintah git reset atau git revert.
 
 # MENGELOLA REPO SENDIRI DI ORGANISASI
+## Mengelola Repo Sendiri Di Organisasi
+<img width="241" height="355" alt="image" src="https://github.com/user-attachments/assets/aabdf6bd-1e50-45b9-81e9-b29939324df8" /><br>
+Pembahasan : Operasinnya sama saja seperti repo di akun sendiri
+
+# MENGELOLA GIT UNTUK KOLABORASI
+## 1. Melakukan Fork Repository
+<img width="365" height="278" alt="image" src="https://github.com/user-attachments/assets/3a895675-9c1f-45fe-ba89-1411702e62a0" /><br>
+Pembahasan : Fork digunakan untuk membuat salinan repository milik pengguna lain ke akun GitHub sendiri. Dengan demikian, kita dapat melakukan perubahan pada salinan tersebut tanpa langsung mengubah repository aslinya.
+
+## 2. Melakukan Clone Repository
+Tujuan: Mengunduh repository hasil fork ke komputer lokal.<br>
+Langkah-langkah:<br>
+1. Buka repository hasil fork di akun GitHub kamu.
+2. Klik tombol Code, kemudian salin URL HTTPS repository.
+3. Buka terminal VS Code atau Git Bash.
+4. Jalankan perintah berikut dengan mengganti URL sesuai repository.<br>
+<img width="195" height="159" alt="image" src="https://github.com/user-attachments/assets/7f102b3a-e924-4c9c-a651-27a5e08d7e02" /><br>
+5. Masuk ke folder repository:
+   
+
+
