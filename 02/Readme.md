@@ -6,3 +6,5 @@ Kelas : Informatika - 1<br>
 
 Laporan praktikum minggu 02<br>
 Topik : Komunikasi Antar Proses pada Sistem Terdistribusi<br>
+
+# 1.  PENDAHULUAN
