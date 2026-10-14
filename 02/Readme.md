@@ -1,8 +1,8 @@
-<<<<<<< HEAD
-
-=======
 # PRAKTIKUM MINGGU 02
-Laporan praktikum minggu kedua<br>
-Topik : Komunikasi Antar Proses pada Sistem Terdistribusi
->>>>>>> ce0c98d4c6579ac11316d2009383fa2a2a81c2f2
 
+Nama : Dwi Ismi Andriani<br>
+Nim : 255410012<br>
+Kelas : Informatika - 1<br>
+
+Laporan praktikum minggu 02<br>
+Topik : Komunikasi Antar Proses pada Sistem Terdistribusi<br>
