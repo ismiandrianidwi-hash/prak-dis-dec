@@ -71,6 +71,9 @@ Berikut langkah-langkah praktik yang bisa dikerjakan:
 Langkah 1. Memasang dan memeriksa uv<br>
 <img width="361" height="86" alt="image" src="https://github.com/user-attachments/assets/8e598a1b-763f-4392-8914-ff930425c80a" />
 
+Langkah 2. Mengatur env variabel
+
+
 
 
 
