@@ -107,6 +107,10 @@ yang sudah dibuat.<br>
 hasilnya:<br>
 <img width="186" height="188" alt="image" src="https://github.com/user-attachments/assets/3e4d79d1-e6b7-4620-9185-faa2b439060b" />
 
+Pembahasan :<br>
+
+Pada praktikum ini, dilakukan pengamatan proses yang berjalan pada sistem operasi serta praktik komunikasi antarproses menggunakan GraphQL. Pengamatan proses dilakukan melalui Task Manager untuk melihat aplikasi yang berjalan dan mencoba menghentikan proses menggunakan fitur End task. Selanjutnya, dilakukan pembuatan GraphQL server menggunakan Python dan paket Strawberry, kemudian server diakses melalui browser untuk menjalankan query data buku. Pada bagian tugas, dibuat program client menggunakan Python untuk mengirimkan query ke server dan menerima hasil respons. Praktikum ini membantu memahami pengelolaan proses serta komunikasi antara client dan server dalam sistem terdistribusi.
+
 # TUGAS
 Buatlah client menggunakan bahasa pemrograman bebas. Client tersebut mengakses
 GraphQL server yang sudah dibuat di atas.
