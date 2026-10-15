@@ -7,6 +7,7 @@ Kelas : Informatika - 1<br>
 Laporan praktikum minggu 02<br>
 Topik : Komunikasi Antar Proses pada Sistem Terdistribusi<br>
 
+# I. Proses pada Satu Node
 # 1. Menampilkan proses yang ada pada komputer
 <img width="571" height="473" alt="image" src="https://github.com/user-attachments/assets/6aa911ec-fda6-4381-8a94-11a46a03d6ff" />
 
@@ -64,6 +65,7 @@ Pada praktikum ini, dilakukan pengamatan dan pengelolaan proses pada sistem oper
 Selanjutnya, perintah Stop-Process -Id digunakan untuk menghentikan proses Notepad berdasarkan PID (Process ID) yang diperoleh dari hasil pemeriksaan. Setelah proses dihentikan, dilakukan pemeriksaan kembali untuk memastikan bahwa proses Notepad sudah tidak berjalan. Proses restart dilakukan dengan menghentikan proses Notepad terlebih dahulu, kemudian menjalankannya kembali menggunakan perintah Start-Process notepad.<br>
 Dari praktikum ini, dapat dipahami bahwa proses aplikasi dapat diperiksa, dihentikan, dan dijalankan kembali melalui terminal tanpa harus menutup aplikasi secara langsung menggunakan tombol keluar.<br>
 
+# II. Komunikasi Antar Proses pada Sistem Terdistribusi
 
 
 
