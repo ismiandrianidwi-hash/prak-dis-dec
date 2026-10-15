@@ -68,19 +68,42 @@ Dari praktikum ini, dapat dipahami bahwa proses aplikasi dapat diperiksa, dihent
 # II. Komunikasi Antar Proses pada Sistem Terdistribusi
 Berikut langkah-langkah praktik yang bisa dikerjakan:
 ## 2.1 Menggunakan Strawberry untuk GraphQL Server
-### Langkah 1. Memasang dan memeriksa uv<br>
+## Langkah 1. Memasang dan memeriksa uv<br>
 <img width="361" height="86" alt="image" src="https://github.com/user-attachments/assets/8e598a1b-763f-4392-8914-ff930425c80a" /><br>
-### Langkah 2. Periksa instalasi Python
+## Langkah 2. Periksa instalasi Python
 <img width="820" height="350" alt="image" src="https://github.com/user-attachments/assets/c89c0dbf-54c6-43b0-8762-c183210cbb79" />
-### Langkah 3. Buat workspace praktikum
+## Langkah 3. Buat workspace praktikum
 <img width="409" height="173" alt="image" src="https://github.com/user-attachments/assets/a3581c9c-a3f5-4726-83ff-01628c060864" />
-### Langkah 4. Buat dan aktifkan environment
+## Langkah 4. Buat dan aktifkan environment
 <img width="518" height="68" alt="image" src="https://github.com/user-attachments/assets/06711704-9d1b-400a-bc5a-c1b4362cf8f9" /><br>
 Kemudian aktifkan :<br>
 <img width="434" height="29" alt="image" src="https://github.com/user-attachments/assets/79af87ce-26ee-423b-9a67-d103b08794de" />
-### Langkah 5. Instal Strawberry GraphQL
+## Langkah 5. Instal Strawberry GraphQL
 <img width="728" height="401" alt="image" src="https://github.com/user-attachments/assets/c6acbfb5-19bb-4b7b-8238-128e16e82e73" />
+## Langkah 6. Membuat folder schema.py
+<img width="718" height="314" alt="image" src="https://github.com/user-attachments/assets/8a624dd3-1d57-421f-9da6-f33d07cb333a" />
+## Langkah 7. Jalankan source code yang sudah disediakan (schema.py):
+<img width="239" height="26" alt="image" src="https://github.com/user-attachments/assets/014c08e8-c00f-4308-bd93-7c82f3edac1b" /><br>
+Setelah itu akses melalui browser ke http://0.0.0.0:8000/graphql (0.0.0.0 bisa diganti dengan
+localhost atau 127.0.0.1). Akan dimunculkan UI untuk request GraphQL data dari server
+yang sudah dibuat.<br>
+<img width="485" height="401" alt="image" src="https://github.com/user-attachments/assets/249b23fe-b55b-4a74-a1e0-791af5eb4014" />
+## Pada tempat yang tersedia (di sisi kiri), tuliskan query berikut:
+<img width="446" height="191" alt="image" src="https://github.com/user-attachments/assets/69b0a639-29bb-464c-9bbf-59a642e968b8" />
+## Langkah 8. Klik pada tombol run. Lihat hasilnya di sebelah kanan
+hasilnya:<br>
+<img width="186" height="188" alt="image" src="https://github.com/user-attachments/assets/3e4d79d1-e6b7-4620-9185-faa2b439060b" />
 
+# TUGAS
+Buatlah client menggunakan bahasa pemrograman bebas. Client tersebut mengakses
+GraphQL server yang sudah dibuat di atas.
+## Langkah 1. Pastikan GraphQL server berjalan
+<img width="959" height="539" alt="image" src="https://github.com/user-attachments/assets/91d10da6-966c-490b-85b5-8745e8ab5423" />
+## Langkah 2. Buat file client
+<img width="559" height="288" alt="image" src="https://github.com/user-attachments/assets/8ccfc431-0f1f-4fc3-96cb-e06092631f49" />
+## Langkah 3. Isi kode program client
+<img width="627" height="446" alt="image" src="https://github.com/user-attachments/assets/a6cdab2d-77d5-46bd-a53a-02b3d458b2f1" />
+## Langkah 4. Jalankan client
 
 
 
