@@ -68,10 +68,23 @@ Dari praktikum ini, dapat dipahami bahwa proses aplikasi dapat diperiksa, dihent
 # II. Komunikasi Antar Proses pada Sistem Terdistribusi
 Berikut langkah-langkah praktik yang bisa dikerjakan:
 ## 2.1 Menggunakan Strawberry untuk GraphQL Server
-Langkah 1. Memasang dan memeriksa uv<br>
+### Langkah 1. Memasang dan memeriksa uv<br>
 <img width="361" height="86" alt="image" src="https://github.com/user-attachments/assets/8e598a1b-763f-4392-8914-ff930425c80a" /><br>
-Langkah 2. Periksa instalasi Python
+### Langkah 2. Periksa instalasi Python
 <img width="820" height="350" alt="image" src="https://github.com/user-attachments/assets/c89c0dbf-54c6-43b0-8762-c183210cbb79" />
+### Langkah 3. Buat workspace praktikum
+<img width="409" height="173" alt="image" src="https://github.com/user-attachments/assets/a3581c9c-a3f5-4726-83ff-01628c060864" />
+### Langkah 4. Buat dan aktifkan environment
+<img width="518" height="68" alt="image" src="https://github.com/user-attachments/assets/06711704-9d1b-400a-bc5a-c1b4362cf8f9" /><br>
+Kemudian aktifkan :<br>
+<img width="434" height="29" alt="image" src="https://github.com/user-attachments/assets/79af87ce-26ee-423b-9a67-d103b08794de" />
+### Langkah 5. Instal Strawberry GraphQL
+<img width="728" height="401" alt="image" src="https://github.com/user-attachments/assets/c6acbfb5-19bb-4b7b-8238-128e16e82e73" />
+
+
+
+
+
 
 
 
