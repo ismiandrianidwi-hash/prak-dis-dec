@@ -69,7 +69,10 @@ Dari praktikum ini, dapat dipahami bahwa proses aplikasi dapat diperiksa, dihent
 Berikut langkah-langkah praktik yang bisa dikerjakan:
 ## 2.1 Menggunakan Strawberry untuk GraphQL Server
 Langkah 1. Memasang dan memeriksa uv<br>
-<img width="361" height="86" alt="image" src="https://github.com/user-attachments/assets/8e598a1b-763f-4392-8914-ff930425c80a" />
+<img width="361" height="86" alt="image" src="https://github.com/user-attachments/assets/8e598a1b-763f-4392-8914-ff930425c80a" /><br>
+Langkah 2. Periksa instalasi Python
+<img width="820" height="350" alt="image" src="https://github.com/user-attachments/assets/c89c0dbf-54c6-43b0-8762-c183210cbb79" />
+
 
 
 
