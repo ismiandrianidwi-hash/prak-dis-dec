@@ -117,9 +117,10 @@ GraphQL server yang sudah dibuat di atas.
 <img width="559" height="288" alt="image" src="https://github.com/user-attachments/assets/8ccfc431-0f1f-4fc3-96cb-e06092631f49" />
 
 ## Langkah 3. Isi kode program client
-<img width="627" height="446" alt="image" src="https://github.com/user-attachments/assets/a6cdab2d-77d5-46bd-a53a-02b3d458b2f1" />
+<img width="415" height="318" alt="image" src="https://github.com/user-attachments/assets/643b5000-b19f-4deb-8fd8-df08ceb30e82" />
 
 ## Langkah 4. Jalankan client
+<img width="537" height="278" alt="image" src="https://github.com/user-attachments/assets/d85c4f9c-b5cb-4698-a98e-817459e0b700" />
 
 
 
