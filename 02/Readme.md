@@ -42,6 +42,27 @@ Pembahasan : Pada praktikum ini, dilakukan pemeriksaan proses aplikasi menggunak
 ## Langkah 4 — Pastikan proses sudah mati
 <img width="251" height="74" alt="image" src="https://github.com/user-attachments/assets/03f24ca3-2ca8-41fa-949c-c9b70e668a5f" />
 
+## B. Me-restart proses aplikasi
+## Langkah 1 — Jalankan Notepad kembali
+<img width="164" height="22" alt="image" src="https://github.com/user-attachments/assets/666ebe4a-0169-4e97-b9c7-132897af32a8" /><br>
+<img width="361" height="325" alt="image" src="https://github.com/user-attachments/assets/af54ce8b-bf0e-49b0-b999-baced71cbd8c" />
+
+## Langkah 2 — Periksa proses Notepad
+<img width="256" height="58" alt="image" src="https://github.com/user-attachments/assets/236844a4-4db4-44ab-8c73-eedd3cd3738c" />
+
+## Langkah 3 — Hentikan proses Notepad
+<img width="175" height="28" alt="image" src="https://github.com/user-attachments/assets/05725a2e-8595-49c0-9aa1-d630dbaf0bdb" />
+
+## Langkah 4 — Pastikan proses sudah mati
+<img width="248" height="79" alt="image" src="https://github.com/user-attachments/assets/6e1ea0de-c28c-45fb-8a81-67598d9f3bb5" /><br>
+Notepad akan terbuka kembali. PID yang baru biasanya berbeda, tetapi tidak selalu dijamin berbeda karena sistem operasi dapat menggunakan kembali PID yang sudah tersedia.<br>
+Pembahasan : <br>
+Pada praktikum ini, dilakukan proses me-restart dan menghentikan aplikasi Notepad melalui Terminal PowerShell. Perintah Stop-Process -Id digunakan untuk menghentikan proses berdasarkan PID (Process ID), sedangkan perintah Start-Process notepad digunakan untuk menjalankan kembali aplikasi Notepad. Setelah proses dihentikan dan dijalankan kembali, dilakukan pemeriksaan menggunakan perintah Get-Process notepad untuk memastikan status proses aplikasi. Dengan praktikum ini, dapat dipahami cara mengelola proses aplikasi melalui terminal tanpa menggunakan tombol keluar pada aplikasi.
+
+## 4. Pembahasan 
+Pada praktikum ini, dilakukan pengamatan dan pengelolaan proses pada sistem operasi Windows menggunakan Terminal PowerShell. Perintah Get-Process digunakan untuk menampilkan proses yang sedang berjalan, sedangkan Start-Process notepad digunakan untuk menjalankan aplikasi Notepad dan melihat proses yang dihasilkan oleh aplikasi tersebut.<br>
+Selanjutnya, perintah Stop-Process -Id digunakan untuk menghentikan proses Notepad berdasarkan PID (Process ID) yang diperoleh dari hasil pemeriksaan. Setelah proses dihentikan, dilakukan pemeriksaan kembali untuk memastikan bahwa proses Notepad sudah tidak berjalan. Proses restart dilakukan dengan menghentikan proses Notepad terlebih dahulu, kemudian menjalankannya kembali menggunakan perintah Start-Process notepad.<br>
+Dari praktikum ini, dapat dipahami bahwa proses aplikasi dapat diperiksa, dihentikan, dan dijalankan kembali melalui terminal tanpa harus menutup aplikasi secara langsung menggunakan tombol keluar.<br>
 
 
 
