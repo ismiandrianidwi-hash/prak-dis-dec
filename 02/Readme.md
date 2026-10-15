@@ -66,6 +66,12 @@ Selanjutnya, perintah Stop-Process -Id digunakan untuk menghentikan proses Notep
 Dari praktikum ini, dapat dipahami bahwa proses aplikasi dapat diperiksa, dihentikan, dan dijalankan kembali melalui terminal tanpa harus menutup aplikasi secara langsung menggunakan tombol keluar.<br>
 
 # II. Komunikasi Antar Proses pada Sistem Terdistribusi
+Berikut langkah-langkah praktik yang bisa dikerjakan:
+## 2.1 Menggunakan Strawberry untuk GraphQL Server
+Langkah 1. Memasang dan memeriksa uv<br>
+<img width="361" height="86" alt="image" src="https://github.com/user-attachments/assets/8e598a1b-763f-4392-8914-ff930425c80a" />
+
+
 
 
 
