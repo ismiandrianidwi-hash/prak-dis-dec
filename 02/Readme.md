@@ -7,6 +7,17 @@ Kelas : Informatika - 1<br>
 Laporan praktikum minggu 02<br>
 Topik : Komunikasi Antar Proses pada Sistem Terdistribusi<br>
 
+# TUJUAN
+1. Memahami komunikasi antarproses dalam sistem terdistribusi.
+2. Memahami cara membuat dan menjalankan GraphQL server menggunakan Python dan Strawberry.
+3. Membuat client yang dapat mengakses GraphQL server serta menerima data dari server.<br>
+
+# DASAR TEORI
+Komunikasi antarproses pada sistem terdistribusi merupakan proses pertukaran informasi antara program yang saling berkomunikasi melalui jaringan. Dalam praktikum ini, GraphQL digunakan sebagai mekanisme untuk meminta dan memperoleh data dari server.<br>
+
+GraphQL adalah bahasa query yang memungkinkan client menentukan data yang ingin diambil dari server. Strawberry merupakan pustaka Python yang digunakan untuk membuat GraphQL server. Client mengirimkan query kepada server, kemudian server memproses permintaan dan mengembalikan respons sesuai data yang diminta. Komunikasi ini memungkinkan client dan server bertukar data secara terstruktur.<br>
+
+#PRAKTIK & LATIHAN
 # I. Proses pada Satu Node
 # 1. Menampilkan proses yang ada pada komputer
 <img width="571" height="473" alt="image" src="https://github.com/user-attachments/assets/6aa911ec-fda6-4381-8a94-11a46a03d6ff" />
@@ -68,10 +79,72 @@ Dari praktikum ini, dapat dipahami bahwa proses aplikasi dapat diperiksa, dihent
 # II. Komunikasi Antar Proses pada Sistem Terdistribusi
 Berikut langkah-langkah praktik yang bisa dikerjakan:
 ## 2.1 Menggunakan Strawberry untuk GraphQL Server
-Langkah 1. Memasang dan memeriksa uv<br>
+
+## Langkah 1. Memasang dan memeriksa uv<br
 <img width="361" height="86" alt="image" src="https://github.com/user-attachments/assets/8e598a1b-763f-4392-8914-ff930425c80a" />
 
+<<<<<<< HEAD
 Langkah 2. Mengatur env variabel
+=======
+## Langkah 2. Periksa instalasi Python
+<img width="820" height="350" alt="image" src="https://github.com/user-attachments/assets/c89c0dbf-54c6-43b0-8762-c183210cbb79" />
+
+## Langkah 3. Buat workspace praktikum
+<img width="409" height="173" alt="image" src="https://github.com/user-attachments/assets/a3581c9c-a3f5-4726-83ff-01628c060864" />
+
+## Langkah 4. Buat dan aktifkan environment
+<img width="518" height="68" alt="image" src="https://github.com/user-attachments/assets/06711704-9d1b-400a-bc5a-c1b4362cf8f9" /><br>
+
+Kemudian aktifkan :<br>
+
+<img width="434" height="29" alt="image" src="https://github.com/user-attachments/assets/79af87ce-26ee-423b-9a67-d103b08794de" />
+
+## Langkah 5. Instal Strawberry GraphQL
+<img width="728" height="401" alt="image" src="https://github.com/user-attachments/assets/c6acbfb5-19bb-4b7b-8238-128e16e82e73" />
+
+## Langkah 6. Membuat folder schema.py
+<img width="718" height="314" alt="image" src="https://github.com/user-attachments/assets/8a624dd3-1d57-421f-9da6-f33d07cb333a" />
+
+## Langkah 7. Jalankan source code yang sudah disediakan (schema.py):
+<img width="239" height="26" alt="image" src="https://github.com/user-attachments/assets/014c08e8-c00f-4308-bd93-7c82f3edac1b" /><br>
+
+Setelah itu akses melalui browser ke http://0.0.0.0:8000/graphql (0.0.0.0 bisa diganti dengan
+localhost atau 127.0.0.1). Akan dimunculkan UI untuk request GraphQL data dari server
+yang sudah dibuat.<br>
+
+<img width="485" height="401" alt="image" src="https://github.com/user-attachments/assets/249b23fe-b55b-4a74-a1e0-791af5eb4014" />
+
+## Pada tempat yang tersedia (di sisi kiri), tuliskan query berikut:
+<img width="446" height="191" alt="image" src="https://github.com/user-attachments/assets/69b0a639-29bb-464c-9bbf-59a642e968b8" />
+
+## Langkah 8. Klik pada tombol run. Lihat hasilnya di sebelah kanan
+hasilnya:<br>
+<img width="186" height="188" alt="image" src="https://github.com/user-attachments/assets/3e4d79d1-e6b7-4620-9185-faa2b439060b" />
+
+Pembahasan :<br>
+
+Pada praktikum ini, dilakukan pengamatan proses yang berjalan pada sistem operasi serta praktik komunikasi antarproses menggunakan GraphQL. Pengamatan proses dilakukan melalui Task Manager untuk melihat aplikasi yang berjalan dan mencoba menghentikan proses menggunakan fitur End task. Selanjutnya, dilakukan pembuatan GraphQL server menggunakan Python dan paket Strawberry, kemudian server diakses melalui browser untuk menjalankan query data buku. Pada bagian tugas, dibuat program client menggunakan Python untuk mengirimkan query ke server dan menerima hasil respons. Praktikum ini membantu memahami pengelolaan proses serta komunikasi antara client dan server dalam sistem terdistribusi.
+
+# TUGAS
+Buatlah client menggunakan bahasa pemrograman bebas. Client tersebut mengakses
+GraphQL server yang sudah dibuat di atas.
+## Langkah 1. Pastikan GraphQL server berjalan
+<img width="959" height="539" alt="image" src="https://github.com/user-attachments/assets/91d10da6-966c-490b-85b5-8745e8ab5423" />
+
+## Langkah 2. Buat file client
+<img width="559" height="288" alt="image" src="https://github.com/user-attachments/assets/8ccfc431-0f1f-4fc3-96cb-e06092631f49" />
+
+## Langkah 3. Isi kode program client
+<img width="415" height="318" alt="image" src="https://github.com/user-attachments/assets/643b5000-b19f-4deb-8fd8-df08ceb30e82" />
+
+## Langkah 4. Jalankan client
+<img width="537" height="278" alt="image" src="https://github.com/user-attachments/assets/d85c4f9c-b5cb-4698-a98e-817459e0b700" /><br>
+
+Pembahasan :<br>
+Pada bagian tugas, dilakukan pembuatan program client menggunakan bahasa Python untuk mengakses GraphQL server yang telah dibuat. Client mengirimkan query melalui alamat http://localhost:8000/graphql untuk meminta data buku, kemudian menerima respons dari server dalam format JSON. Program ini menunjukkan proses komunikasi antara client dan server dalam sistem terdistribusi, yaitu client mengirimkan permintaan dan server memberikan respons sesuai data yang diminta.
+
+
+>>>>>>> cfeb3e35663eee19de9e6a19ec03278c08d95344
 
 
 
