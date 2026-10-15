@@ -12,11 +12,12 @@ Topik : Komunikasi Antar Proses pada Sistem Terdistribusi<br>
 2. Memahami cara membuat dan menjalankan GraphQL server menggunakan Python dan Strawberry.
 3. Membuat client yang dapat mengakses GraphQL server serta menerima data dari server.<br>
 
-#DASAR TEORI
+# DASAR TEORI
 Komunikasi antarproses pada sistem terdistribusi merupakan proses pertukaran informasi antara program yang saling berkomunikasi melalui jaringan. Dalam praktikum ini, GraphQL digunakan sebagai mekanisme untuk meminta dan memperoleh data dari server.<br>
 
 GraphQL adalah bahasa query yang memungkinkan client menentukan data yang ingin diambil dari server. Strawberry merupakan pustaka Python yang digunakan untuk membuat GraphQL server. Client mengirimkan query kepada server, kemudian server memproses permintaan dan mengembalikan respons sesuai data yang diminta. Komunikasi ini memungkinkan client dan server bertukar data secara terstruktur.<br>
 
+#PRAKTIK & LATIHAN
 # I. Proses pada Satu Node
 # 1. Menampilkan proses yang ada pada komputer
 <img width="571" height="473" alt="image" src="https://github.com/user-attachments/assets/6aa911ec-fda6-4381-8a94-11a46a03d6ff" />
