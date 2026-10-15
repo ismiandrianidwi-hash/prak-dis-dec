@@ -99,10 +99,13 @@ Buatlah client menggunakan bahasa pemrograman bebas. Client tersebut mengakses
 GraphQL server yang sudah dibuat di atas.
 ## Langkah 1. Pastikan GraphQL server berjalan
 <img width="959" height="539" alt="image" src="https://github.com/user-attachments/assets/91d10da6-966c-490b-85b5-8745e8ab5423" />
+
 ## Langkah 2. Buat file client
 <img width="559" height="288" alt="image" src="https://github.com/user-attachments/assets/8ccfc431-0f1f-4fc3-96cb-e06092631f49" />
+
 ## Langkah 3. Isi kode program client
 <img width="627" height="446" alt="image" src="https://github.com/user-attachments/assets/a6cdab2d-77d5-46bd-a53a-02b3d458b2f1" />
+
 ## Langkah 4. Jalankan client
 
 
