@@ -1,4 +1,4 @@
-## PRAKTIKUM MINGGU 03 
+# PRAKTIKUM MINGGU 03 
 Nama     : Dwi Ismi Andriani <br>
 Nim      : 255410012 <br>
 Kelas    :  Informatika - 1 <br>
