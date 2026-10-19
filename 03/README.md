@@ -7,3 +7,9 @@ Laporan praktikum ke - 03 <br>
 Topik    : Sinkronisasi Pada Sistem Terdistribusi <br>
 
 # TUJUAN
+
+# DASAR TEORI
+
+# PRAKTIK
+
+# TUGAS
