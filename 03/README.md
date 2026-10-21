@@ -14,7 +14,8 @@ Topik : Sinkronisasi Pada Sistem Terdistribusi <br>
 # PRAKTIK
 
 ## 3.1 Sinkronisasi Waktu
-
 1. Menginstall NetTime (Windows)<br>
+
+
 
 # TUGAS
