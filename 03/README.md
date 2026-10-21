@@ -129,6 +129,14 @@ print(f"VC1 happens before VC0: {vc1.happens_before(vc0)}")
 print(f"VC0 is concurrent with VC2: {vc0.is_concurrent(vc2)}")
 ```
 
-   <img src="images/04_Vector_Clock.png" width="700">
+Output:
+<img src="images/03_Vector_Clock.png" width="700">
+
+2. Buat modul Python untuk class VectorClock tersebut dan buatlah contoh cara menggunakan modul tersebut
+
+Buat Folder **"Modul Vclock"**
+<img src="images/04_Modul.png" width="700">
+
+Kemudian masukkan file **"vclocks.py"**
 
 # TUGAS
