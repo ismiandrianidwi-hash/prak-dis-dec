@@ -32,7 +32,7 @@ Melalui praktikum ini, konsep sinkronisasi waktu, Vector Clock, race condition, 
 # PRAKTIK
 ## 3.1 Sinkronisasi Waktu
 
-1. # Menginstall NetTime (Windows)<br>
+1. Menginstall NetTime (Windows)<br>
 
    <img width="371" height="278" alt="image" src="https://github.com/user-attachments/assets/171ec544-15ca-489c-97d4-48ce0299a16a" /> <br>
 
@@ -134,3 +134,27 @@ Menambahkan file raft_Module.py dan simulasi_raft.py <br>
 <img src="images/11_Main.png" width="700"><br>
 
 ## 3.3 Problem Tanpa Sinkronisasi
+Menjalankan program : <br>
+<img src="images/12_gambar.png" width="700"><br>
+<img src="images/13_gambar.png" width="700"><br>
+
+Pembahasan :<br>
+Pada output pertama, semua task selesai dalam waktu 5 detik karena memiliki durasi yang sama. Namun pada output kedua, setelah durasi tiap thread diubah menjadi bervariasi (A: 6s, B: 70s, C: 90s, D: 17s, E: 10s), urutan selesainya berubah menjadi A $\rightarrow$ E $\rightarrow$ D $\rightarrow$ B $\rightarrow$ C. Saya ubah angkanya untuk program angka untuk output kedua. Hal ini membuktikan sifat dasar multithreading yang asinkronus dan independen: task dengan durasi lebih singkat (seperti A dan E) akan selesai lebih dulu tanpa harus menunggu task yang durasinya lebih lama (seperti B dan C), dan total waktu running program ditentukan oleh thread yang paling lama (Task C = 90 detik).<br>
+
+## 3.3.1 Data Race / Race Conditions
+(race-conditions-01.py).<br>
+Output :<br>
+<img src="images/14_Output.png" width="700"><br>
+Pembahasan : <br>
+Hasil pengujian program race-conditions-01.py menunjukkan adanya kesalahan logika transaksi akibat ketiadaan pengunci variabel. Meskipun saldo awal yang dimiliki hanya sebesar Rp 100 dan setiap thread mencoba melakukan penarikan sebesar Rp 80, kedua transaksi tersebut secara tidak valid sama-sama berhasil dieksekusi. Kondisi ini menyebabkan saldo akhir bernilai tidak konsisten atau bernilai negatif.<br>
+
+Penyebab utama dari data race ini adalah akses simultan oleh thread t1 dan t2 terhadap variabel global balance secara bersamaan. Saat t1 mengecek kondisi saldo, kriteria bernilai benar karena saldo masih terbaca Rp 100. Namun, jeda eksekusi pada time.sleep(0.01) memberi celah bagi t2 untuk membaca saldo yang belum diperbarui. Akibatnya, t2 membaca nilai saldo yang sama dan meloloskan penarikan kedua, sehingga konsistensi data saldo akhir menjadi rusak.<br>
+
+(race-conditions-02.py).<br>
+Output : <br>
+<img src="images/15_Output.png" width="700"><br>
+Pembahasan : <br>
+Hasil eksekusi program race-conditions-02.py menunjukkan bahwa penarikan hanya berhasil dilakukan satu kali, sehingga sisa saldo akhir tepat bernilai Rp 20. Kondisi race condition tidak terjadi karena penggunaan objek pengunci counter_lock = threading.Lock() melalui blok with counter_lock:. Mekanisme locking ini memastikan bahwasanya seluruh kode pemeriksaan dan pengurangan saldo (critical section) hanya dapat diakses oleh satu thread saja pada satu waktu. Ketika thread pertama masuk dan mengunci akses, thread kedua dipaksa menunggu hingga thread pertama selesai memperbarui nilai saldo. Begitu thread pertama selesai dan saldo tersisa Rp 20, thread kedua baru bisa masuk, namun gagal mengeksekusi penarikan karena kondisi balance >= amount ($20 \ge 80$) bernilai salah, sehingga konsistensi data saldo tetap terjaga.<br>
+
+## 3.3.2 Deadlock 
+

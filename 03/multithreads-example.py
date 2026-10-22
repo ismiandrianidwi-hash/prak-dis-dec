@@ -7,11 +7,11 @@ def task(name, delay):
     print(f"Task {name} finished after {delay}s.")
 
 # 1. Create thread objects
-t1 = threading.Thread(target=task, args=("A", 5))
-t2 = threading.Thread(target=task, args=("B", 5))
-t3 = threading.Thread(target=task, args=("C", 5))
-t4 = threading.Thread(target=task, args=("D", 5))
-t5 = threading.Thread(target=task, args=("E", 5))
+t1 = threading.Thread(target=task, args=("A", 6))
+t2 = threading.Thread(target=task, args=("B", 70))
+t3 = threading.Thread(target=task, args=("C", 90))
+t4 = threading.Thread(target=task, args=("D", 17))
+t5 = threading.Thread(target=task, args=("E", 10))
 
 # 2. Start the threads
 t1.start()
