@@ -120,4 +120,7 @@ Buat Folder **"Modul Vclock"**<br>
 Kemudian masukkan file **"vclocks.py"**<br>
 <img src="images/06_vclocks.png" width="700"><br>
 
+Masukkan terminal untuk vclocks<br>
+<img src="images/07_vclocks.png" width="700"><br>
+
 ## 3.3 Problem Tanpa Sinkronisasi
