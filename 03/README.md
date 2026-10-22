@@ -143,17 +143,25 @@ Pada output pertama, semua task selesai dalam waktu 5 detik karena memiliki dura
 
 ## 3.3.1 Data Race / Race Conditions
 (race-conditions-01.py).<br>
+
 Output :<br>
+
 <img src="images/14_Output.png" width="700"><br>
 Pembahasan : <br>
+
+
 Hasil pengujian program race-conditions-01.py menunjukkan adanya kesalahan logika transaksi akibat ketiadaan pengunci variabel. Meskipun saldo awal yang dimiliki hanya sebesar Rp 100 dan setiap thread mencoba melakukan penarikan sebesar Rp 80, kedua transaksi tersebut secara tidak valid sama-sama berhasil dieksekusi. Kondisi ini menyebabkan saldo akhir bernilai tidak konsisten atau bernilai negatif.<br>
 
 Penyebab utama dari data race ini adalah akses simultan oleh thread t1 dan t2 terhadap variabel global balance secara bersamaan. Saat t1 mengecek kondisi saldo, kriteria bernilai benar karena saldo masih terbaca Rp 100. Namun, jeda eksekusi pada time.sleep(0.01) memberi celah bagi t2 untuk membaca saldo yang belum diperbarui. Akibatnya, t2 membaca nilai saldo yang sama dan meloloskan penarikan kedua, sehingga konsistensi data saldo akhir menjadi rusak.<br>
 
 (race-conditions-02.py).<br>
+
 Output : <br>
+
 <img src="images/15_Output.png" width="700"><br>
+
 Pembahasan : <br>
+
 Hasil eksekusi program race-conditions-02.py menunjukkan bahwa penarikan hanya berhasil dilakukan satu kali, sehingga sisa saldo akhir tepat bernilai Rp 20. Kondisi race condition tidak terjadi karena penggunaan objek pengunci counter_lock = threading.Lock() melalui blok with counter_lock:. Mekanisme locking ini memastikan bahwasanya seluruh kode pemeriksaan dan pengurangan saldo (critical section) hanya dapat diakses oleh satu thread saja pada satu waktu. Ketika thread pertama masuk dan mengunci akses, thread kedua dipaksa menunggu hingga thread pertama selesai memperbarui nilai saldo. Begitu thread pertama selesai dan saldo tersisa Rp 20, thread kedua baru bisa masuk, namun gagal mengeksekusi penarikan karena kondisi balance >= amount ($20 \ge 80$) bernilai salah, sehingga konsistensi data saldo tetap terjaga.<br>
 
 ## 3.3.2 Deadlock 
