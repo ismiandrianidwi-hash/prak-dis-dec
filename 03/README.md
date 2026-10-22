@@ -54,8 +54,6 @@ Klik Start untuk menghidupkan
 ## 3.2 Vector Clock
 
 1. Jalankan program tersebut, amati keluaran nya
-
-```
 class VectorClock:
     def __init__(self, num_processes, process_id):
         self.clocks = [0] * num_processes  # Initialize all clocks to zero
@@ -154,4 +152,4 @@ Buat Folder **"Modul Vclock"**
 
 Kemudian masukkan file **"vclocks.py"**
 
-# TUGAS
+## 3.3 Problem Tanpa Sinkronisasi
