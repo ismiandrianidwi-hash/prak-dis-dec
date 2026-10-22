@@ -108,47 +108,14 @@ class VectorClock:
         return not (self.happens_before(other_vector_clock) or
                     other_vector_clock.happens_before(self))
 ```
-# Simulate a system with 3 processes
-vc0 = VectorClock(num_processes=3, process_id=0)
-vc1 = VectorClock(num_processes=3, process_id=1)
-vc2 = VectorClock(num_processes=3, process_id=2)
 
-print(vc0)
-print(vc1)
-print(vc2)
-
-# Process 0 performs a local event
-vc0.increment()
-print(vc0)
-
-# Process 0 sends a message to Process 1
-message_from_p0 = vc0.send_message()
-vc1.receive_message(message_from_p0)
-print(vc0)
-print(vc1)
-
-# Process 2 performs a local event
-vc2.increment()
-print(vc2)
-
-# Process 1 sends a message to Process 2
-message_from_p1 = vc1.send_message()
-vc2.receive_message(message_from_p1)
-print(vc1)
-print(vc2)
-
-# Check causality
-print(f"VC0 happens before VC1: {vc0.happens_before(vc1)}")
-print(f"VC1 happens before VC0: {vc1.happens_before(vc0)}")
-print(f"VC0 is concurrent with VC2: {vc0.is_concurrent(vc2)}")
-
-Output:
+Output:<br>
 <img src="images/03_Vector_Clock.png" width="700">
 
 2. Buat modul Python untuk class VectorClock tersebut dan buatlah contoh cara menggunakan modul tersebut
 
-Buat Folder **"Modul Vclock"**
-<img src="images/04_Modul.png" width="700">
+Buat Folder **"Modul Vclock"**<br>
+<img src="images/04_Modul.png" width="700"><br>
 
 Kemudian masukkan file **"vclocks.py"**
 
