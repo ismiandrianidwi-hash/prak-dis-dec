@@ -123,4 +123,14 @@ Kemudian masukkan file **"vclocks.py"**<br>
 Masukkan terminal untuk vclocks<br>
 <img src="images/07_vclocks.png" width="700"><br>
 
+Kemudian masukkan lagi file **"Main.py"**<br>
+<img src="images/08_Main.png" width="700"><br>
+
+Masukkan terminal untuk Main<br>
+<img src="images/09_Main.png" width="700"><br>
+<img src="images/10_Main.png" width="700"><br>
+
+Menambahkan file raft_Module.py dan simulasi_raft.py <br>
+<img src="images/11_Main.png" width="700"><br>
+
 ## 3.3 Problem Tanpa Sinkronisasi
