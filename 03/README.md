@@ -30,6 +30,7 @@ Algoritma Raft merupakan algoritma konsensus yang digunakan untuk membantu sejum
 Melalui praktikum ini, konsep sinkronisasi waktu, Vector Clock, race condition, deadlock, dan algoritma Raft dipelajari melalui pelaksanaan program Python, pengamatan output, serta pembuatan modul dan simulasi sederhana.<br>
 
 # PRAKTIK
+
 ## 3.1 Sinkronisasi Waktu
 
 1. Menginstall NetTime (Windows)<br>
@@ -52,8 +53,9 @@ Klik Start untuk menghidupkan
 <img src="images/02_Network_Time.png" width="700">
 
 ## 3.2 Vector Clock
+
 1. Jalankan program tersebut, amati keluaran nya
-class VectorClock:
+   class VectorClock:
 
 ```
     def __init__(self, num_processes, process_id):
@@ -134,6 +136,7 @@ Menambahkan file raft_Module.py dan simulasi_raft.py <br>
 <img src="images/11_Main.png" width="700"><br>
 
 ## 3.3 Problem Tanpa Sinkronisasi
+
 Menjalankan program : <br>
 <img src="images/12_gambar.png" width="700"><br>
 <img src="images/13_gambar.png" width="700"><br>
@@ -142,13 +145,13 @@ Pembahasan :<br>
 Pada output pertama, semua task selesai dalam waktu 5 detik karena memiliki durasi yang sama. Namun pada output kedua, setelah durasi tiap thread diubah menjadi bervariasi (A: 6s, B: 70s, C: 90s, D: 17s, E: 10s), urutan selesainya berubah menjadi A $\rightarrow$ E $\rightarrow$ D $\rightarrow$ B $\rightarrow$ C. Saya ubah angkanya untuk program angka untuk output kedua. Hal ini membuktikan sifat dasar multithreading yang asinkronus dan independen: task dengan durasi lebih singkat (seperti A dan E) akan selesai lebih dulu tanpa harus menunggu task yang durasinya lebih lama (seperti B dan C), dan total waktu running program ditentukan oleh thread yang paling lama (Task C = 90 detik).<br>
 
 ## 3.3.1 Data Race / Race Conditions
+
 (race-conditions-01.py).<br>
 
 Output :<br>
 
 <img src="images/14_Output.png" width="700"><br>
 Pembahasan : <br>
-
 
 Hasil pengujian program race-conditions-01.py menunjukkan adanya kesalahan logika transaksi akibat ketiadaan pengunci variabel. Meskipun saldo awal yang dimiliki hanya sebesar Rp 100 dan setiap thread mencoba melakukan penarikan sebesar Rp 80, kedua transaksi tersebut secara tidak valid sama-sama berhasil dieksekusi. Kondisi ini menyebabkan saldo akhir bernilai tidak konsisten atau bernilai negatif.<br>
 
@@ -164,5 +167,37 @@ Pembahasan : <br>
 
 Hasil eksekusi program race-conditions-02.py menunjukkan bahwa penarikan hanya berhasil dilakukan satu kali, sehingga sisa saldo akhir tepat bernilai Rp 20. Kondisi race condition tidak terjadi karena penggunaan objek pengunci counter_lock = threading.Lock() melalui blok with counter_lock:. Mekanisme locking ini memastikan bahwasanya seluruh kode pemeriksaan dan pengurangan saldo (critical section) hanya dapat diakses oleh satu thread saja pada satu waktu. Ketika thread pertama masuk dan mengunci akses, thread kedua dipaksa menunggu hingga thread pertama selesai memperbarui nilai saldo. Begitu thread pertama selesai dan saldo tersisa Rp 20, thread kedua baru bisa masuk, namun gagal mengeksekusi penarikan karena kondisi balance >= amount ($20 \ge 80$) bernilai salah, sehingga konsistensi data saldo tetap terjaga.<br>
 
-## 3.3.2 Deadlock 
+## 3.3.2 Deadlock
 
+(deadlock-01.py): <br>
+
+<img src="images/19_dedlock.png" width="700"><br>
+
+Visualisasi menggunakan ballpoint : <br>
+<img src="images/20_deadlock.png" width="700"><br>
+
+Pembahasan : <br>
+
+Berdasarkan hasil eksekusi program deadlock-01.py pada terminal, program mengalami kondisi Deadlock, yaitu situasi di mana dua atau lebih thread terhenti secara permanen (hang) karena saling menunggu resource yang dikunci oleh thread lainnya. Pada kasus ini, Thread 1 telah mengunci Resource A dan sedang menunggu untuk mengakses Resource B, sedangkan di saat yang sama Thread 2 telah mengunci Resource B dan sedang menunggu melepaskan Resource A. Situasi ini menciptakan ketergantungan melingkar (circular wait) serta memenuhi kondisi hold and wait, di mana tidak ada thread yang bersedia melepaskan resource yang sedang dipegangnya sebelum mendapatkan resource berikutnya. Akibatnya, program tidak akan pernah menyelesaikan prosesnya atau menampilkan output lanjutan sampai eksekusi dihentikan secara paksa menggunakan perintah Ctrl + C.<br>
+
+(deadlock-02.py): <br>
+
+<img src="images/21_deadlock.png" width="700"><br>
+
+Pembahasan : <br>
+
+Deadlock tidak terjadi pada program deadlock-02.py karena kode tersebut menerapkan dua mekanisme utama pencegahan deadlock, yaitu pelepasan lock secara bertahap (release before request) dan penggunaan batas waktu (timeout). Pada kode tersebut, Thread 1 segera melepaskan Lock A di dalam blok finally setelah selesai melakukan simulasinya sebelum mencoba meminta Lock B. Begitu pula dengan Thread 2 yang melepaskan Lock B terlebih dahulu sebelum mencoba mengambil Lock A. Tindakan melepaskan lock pertama ini memutus kondisi Hold and Wait serta ketergantungan melingkar (Circular Wait), sehingga lock yang dibutuhkan oleh thread lain menjadi bebas dan dapat diakses secara bergantian hingga seluruh eksekusi selesai dengan sukses (Execution Finished). <br>
+
+## 3.4 Algoritma Raft
+
+<img src="images/22_raft.png" width="700"><br>
+
+<img src="images/23_raft.png" width="700"><br>
+
+Pembahasan : <br>
+
+Berdasarkan hasil eksekusi simulasi algoritma Raft pada gambar, pada kondisi awal (Step 1-2) seluruh node (Node 1, Node 2, dan Node 3) berada pada peran FOLLOWER dengan nilai Term 0. Pada Step 3, waktu election timeout terlampaui sehingga node berpindah ke status CANDIDATE untuk menaikkan nilai Term menjadi 1 dan memulai proses pemilihan (election). Setelah mendapatkan dukungan suara mayoritas, node menetapkan dirinya sebagai LEADER.<br>
+
+Pada Step 4-10, Node 2 bertindak sebagai pemimpin (LEADER) dan secara periodik mengirimkan sinyal heartbeat kepada Node 1 dan Node 3. Sinyal tersebut memaksa Node 1 dan Node 3 kembali serta bertahan pada peran FOLLOWER. Selama memimpin, Node 2 juga melakukan penambahan entri log (append entry). Selanjutnya pada Step 11-20, dinamika simulasi menunjukkan perpindahan kepemimpinan ke Node 1 yang mengambil alih peran LEADER pada Term 1 dan terus menambahkan entri log baru (seperti command-10 dan command-15) hingga akhir tahap eksekusi, sementara node lainnya tetap berada pada status FOLLOWER.<br>
+
+Visualisasi menggunakan ballpoint : <br>
