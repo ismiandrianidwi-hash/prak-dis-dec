@@ -55,6 +55,7 @@ Klik Start untuk menghidupkan
 
 1. Jalankan program tersebut, amati keluaran nya
 class VectorClock:
+'''
     def __init__(self, num_processes, process_id):
         self.clocks = [0] * num_processes  # Initialize all clocks to zero
         self.process_id = process_id      # The ID of the current process
@@ -106,6 +107,7 @@ class VectorClock:
         """
         return not (self.happens_before(other_vector_clock) or
                     other_vector_clock.happens_before(self))
+'''
 
 # Simulate a system with 3 processes
 vc0 = VectorClock(num_processes=3, process_id=0)
@@ -140,7 +142,6 @@ print(vc2)
 print(f"VC0 happens before VC1: {vc0.happens_before(vc1)}")
 print(f"VC1 happens before VC0: {vc1.happens_before(vc0)}")
 print(f"VC0 is concurrent with VC2: {vc0.is_concurrent(vc2)}")
-```
 
 Output:
 <img src="images/03_Vector_Clock.png" width="700">
