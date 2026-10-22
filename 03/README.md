@@ -9,13 +9,28 @@ Topik : Sinkronisasi Pada Sistem Terdistribusi <br>
 
 # TUJUAN
 
+1. Memahami konsep sinkronisasi waktu dan penerapan protokol NTP dalam sistem terdistribusi.
+2. Memahami penggunaan Vector Clock untuk menentukan urutan kejadian (event) dalam sistem terdistribusi.
+3. Memahami permasalahan race condition dan deadlock serta cara mencegahnya menggunakan mekanisme sinkronisasi.
+4. Memahami cara kerja algoritma Raft dalam proses pemilihan koordinator (leader).
+5. Mampu menjalankan, menganalisis, dan mengembangkan program Python terkait sinkronisasi pada sistem terdistribusi.
+
 # DASAR TEORI
 
+Sistem terdistribusi merupakan sistem yang terdiri dari beberapa komputer atau proses yang saling berkomunikasi untuk menjalankan tugas. Dalam sistem ini, sinkronisasi diperlukan agar proses dapat berjalan dengan teratur dan masalah akibat pelaksanaan tugas secara bersamaan dapat ditangani.<br>
+
+Sinkronisasi waktu merupakan proses penyesuaian waktu antarkomputer menggunakan protokol seperti Network Time Protocol (NTP) dan Precision Time Protocol (PTP). Sinkronisasi ini membantu menjaga konsistensi waktu dalam komunikasi antarkomputer.<br>
+
+Vector Clock adalah mekanisme pencatatan waktu logis yang digunakan untuk mengetahui hubungan urutan kejadian dalam sistem terdistribusi. Vector Clock memperbarui nilai penghitung berdasarkan kejadian yang berlangsung dan pesan yang diterima antarproses.<br>
+
+Race condition terjadi ketika beberapa proses mengakses atau mengubah data bersama secara bersamaan sehingga hasilnya dapat berbeda bergantung pada urutan eksekusi. Sementara itu, deadlock merupakan kondisi ketika beberapa proses saling menunggu sumber daya sehingga tidak dapat melanjutkan eksekusi. Kedua masalah tersebut dapat ditangani melalui penerapan mekanisme sinkronisasi yang tepat.<br>
+
+Algoritma Raft merupakan algoritma konsensus yang digunakan untuk membantu sejumlah node mencapai kesepakatan, termasuk dalam pemilihan pemimpin (leader). Dalam proses pemilihan, node dapat berperan sebagai follower, candidate, atau leader sesuai dengan kondisi dan hasil pemungutan suara.<br>
+
+Melalui praktikum ini, konsep sinkronisasi waktu, Vector Clock, race condition, deadlock, dan algoritma Raft dipelajari melalui pelaksanaan program Python, pengamatan output, serta pembuatan modul dan simulasi sederhana.<br>
+
 # PRAKTIK
-
 ## 3.1 Sinkronisasi Waktu
-
-<<<<<<< HEAD
 
 1. # Menginstall NetTime (Windows)<br>
 
