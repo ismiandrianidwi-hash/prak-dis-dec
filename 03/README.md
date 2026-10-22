@@ -52,9 +52,10 @@ Klik Start untuk menghidupkan
 <img src="images/02_Network_Time.png" width="700">
 
 ## 3.2 Vector Clock
-'''
 1. Jalankan program tersebut, amati keluaran nya
 class VectorClock:
+
+```
     def __init__(self, num_processes, process_id):
         self.clocks = [0] * num_processes  # Initialize all clocks to zero
         self.process_id = process_id      # The ID of the current process
@@ -106,8 +107,7 @@ class VectorClock:
         """
         return not (self.happens_before(other_vector_clock) or
                     other_vector_clock.happens_before(self))
-'''
-
+```
 # Simulate a system with 3 processes
 vc0 = VectorClock(num_processes=3, process_id=0)
 vc1 = VectorClock(num_processes=3, process_id=1)
