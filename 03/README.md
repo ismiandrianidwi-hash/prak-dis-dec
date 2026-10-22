@@ -117,6 +117,7 @@ Output:<br>
 Buat Folder **"Modul Vclock"**<br>
 <img src="images/04_Modul.png" width="700"><br>
 
-Kemudian masukkan file **"vclocks.py"**
+Kemudian masukkan file **"vclocks.py"**<br>
+<img src="images/06_vclocks.png" width="700"><br>
 
 ## 3.3 Problem Tanpa Sinkronisasi
