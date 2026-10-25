@@ -49,5 +49,11 @@ Memastikan Docker dan Docker Compose sudah terinstal serta layanan Docker aktif.
 <img src="images/02_install_docker.png" width="700">
 
 ## 4.1.2 Struktur Direktori dan FIle
+Membuat 3 file :<br>
+
+<img src="images/03_install_docker.png" width="700">
+
+## 4.1.3 Menjalankan docker-compose 
+
 
 

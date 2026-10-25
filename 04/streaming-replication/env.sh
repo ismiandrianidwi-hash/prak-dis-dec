@@ -1,0 +1,7 @@
+alias dcu="sudo docker-compose up -d" 
+alias dcd="sudo docker-compose down" 
+alias dps="sudo docker ps" 
+alias der="sudo docker exec -it <nama-direktori>-postgres_replica-1 bash" 
+alias dep="sudo docker exec -it <nama-direktori>-postgres_primary-1 bash" 
+alias dlr="sudo docker logs <nama-direktori>-postgres_replica-1" 
+alias dlp="sudo docker logs <nama-direktori>-postgres_primary-1" 
