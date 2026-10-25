@@ -201,3 +201,7 @@ Berdasarkan hasil eksekusi simulasi algoritma Raft pada gambar, pada kondisi awa
 Pada Step 4-10, Node 2 bertindak sebagai pemimpin (LEADER) dan secara periodik mengirimkan sinyal heartbeat kepada Node 1 dan Node 3. Sinyal tersebut memaksa Node 1 dan Node 3 kembali serta bertahan pada peran FOLLOWER. Selama memimpin, Node 2 juga melakukan penambahan entri log (append entry). Selanjutnya pada Step 11-20, dinamika simulasi menunjukkan perpindahan kepemimpinan ke Node 1 yang mengambil alih peran LEADER pada Term 1 dan terus menambahkan entri log baru (seperti command-10 dan command-15) hingga akhir tahap eksekusi, sementara node lainnya tetap berada pada status FOLLOWER.<br>
 
 Visualisasi menggunakan ballpoint : <br>
+
+<img src="images/24_raft.png" width="700"><br>
+
+
