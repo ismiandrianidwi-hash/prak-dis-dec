@@ -5,7 +5,7 @@ Nim : 255410012 <br>
 Kelas : Informatika - 1 <br>
 
 Laporan praktikum ke - 04 <br>
-Topik : Sinkronisasi Pada Sistem Terdistribusi <br>
+Topik : Konsistensi dan Replikasi pada Sistem Terdistribusi <br>
 
 # TUJUAN
 1. Memahami konsep konsistensi dan replikasi data pada sistem terdistribusi.
@@ -37,3 +37,17 @@ Replikasi master-master merupakan model replikasi yang memungkinkan node dalam c
 5. Docker dan Docker Compose
 
 Docker merupakan platform untuk menjalankan aplikasi dalam container, sedangkan Docker Compose digunakan untuk mengatur dan menjalankan beberapa container melalui satu file konfigurasi. Dalam praktikum ini, keduanya digunakan untuk menjalankan PostgreSQL dan Apache Ignite beserta node-node yang diperlukan.
+
+## 4.1 Streaming Replication Menggunakan PostgreSQL
+Membuat dua server database yang saling terhubung, yaitu server utama (primary) dan server cadangan (replica). Ketika data ditambahkan atau diubah di primary, perubahan tersebut akan direplikasi ke replica.
+
+Install Docker
+<img src="images/01_install_docker.png" width="700">
+
+## 4.1.1 Prasyarat
+Memastikan Docker dan Docker Compose sudah terinstal serta layanan Docker aktif.
+<img src="images/02_install_docker.png" width="700">
+
+## 4.1.2 Struktur Direktori dan FIle
+
+
