@@ -39,9 +39,11 @@ Replikasi master-master merupakan model replikasi yang memungkinkan node dalam c
 Docker merupakan platform untuk menjalankan aplikasi dalam container, sedangkan Docker Compose digunakan untuk mengatur dan menjalankan beberapa container melalui satu file konfigurasi. Dalam praktikum ini, keduanya digunakan untuk menjalankan PostgreSQL dan Apache Ignite beserta node-node yang diperlukan.
 
 ## 4.1 Streaming Replication Menggunakan PostgreSQL
-Membuat dua server database yang saling terhubung, yaitu server utama (primary) dan server cadangan (replica). Ketika data ditambahkan atau diubah di primary, perubahan tersebut akan direplikasi ke replica.
+Membuat dua server database yang saling terhubung, yaitu server utama (primary) dan server cadangan (replica). Ketika data ditambahkan atau diubah di primary, perubahan tersebut akan direplikasi ke replica.<br>
 
-Install Docker
+Install Docker<br>
+
+
 <img src="images/01_install_docker.png" width="700">
 
 ## 4.1.1 Prasyarat
@@ -54,6 +56,23 @@ Membuat 3 file :<br>
 <img src="images/03_install_docker.png" width="700">
 
 ## 4.1.3 Menjalankan docker-compose 
+
+<img src="images/04_install_docker.png" width="700"><br>
+
+Kemudian periksa kontainernya:<br>
+
+<img src="images/05_install_docker.png" width="700"><br>
+
+<img src="images/06_install_docker.png" width="700"><br>
+
+Pembahasan : <br>
+
+Pada praktikum ini, Docker Compose digunakan untuk menjalankan container PostgreSQL primary dan replica. Berdasarkan hasil perintah docker ps, kedua container berstatus healthy. Selain itu, pemeriksaan pg_stat_replication menunjukkan status streaming dengan mode replikasi async. Hal ini menunjukkan bahwa kedua container berjalan dengan baik dan proses streaming replication telah berhasil dilakukan.<br>
+
+## 4.1.4 Pengujian 
+
+
+
 
 
 
