@@ -69,6 +69,7 @@ Pada bagian 4.1.2 Struktur Direktori dan File, dilakukan penyiapan struktur dire
 
 ## 4.1.3 Menjalankan docker-compose 
 
+
 <img src="images/04_install_docker.png" width="700"><br>
 
 Kemudian periksa kontainernya:<br>
@@ -82,6 +83,54 @@ Pembahasan : <br>
 Pada praktikum ini, Docker Compose digunakan untuk menjalankan container PostgreSQL primary dan replica. Berdasarkan hasil perintah docker ps, kedua container berstatus healthy. Selain itu, pemeriksaan pg_stat_replication menunjukkan status streaming dengan mode replikasi async. Hal ini menunjukkan bahwa kedua container berjalan dengan baik dan proses streaming replication telah berhasil dilakukan.<br>
 
 ## 4.1.4 Pengujian 
+
+### 1. Menjalankan Container <br>
+
+<img src="images/07_install_docker.png" width="700"><br>
+
+Pembahasan : <br>
+
+### 2. Pastikan container sudah aktif dengan mengeceknya via:
+
+<img src="images/09_install_healty.png" width="700"><br>
+
+Pembahasan : <br>
+
+### 3. Masukkan perintah docker exec untuk masuk ke database primary:
+
+
+<img src="images/09_install_healty.png" width="700"><br>
+
+Pembahasan : <br>
+
+### 4. Cek Status Replikasi di Primary Server
+```
+Asus@LAPTOP-ET8TC1DC UCRT64 ~/OneDrive/Desktop/prak-dis-dec/04/streaming-replication (main)
+$ docker exec -it streaming-replication-postgres_primary-1 psql -U zuser -d zdb -c "\x" -c "SELECT * FROM pg_stat_replication;"
+Expanded display is on.
+-[ RECORD 1 ]----+------------------------------
+pid              | 68
+usesysid         | 16385
+usename          | replicator
+application_name | walreceiver
+client_addr      | 172.18.0.3
+client_hostname  |
+client_port      | 42614
+backend_start    | 2026-10-28 15:29:34.831691+00
+backend_xmin     |
+state            | streaming
+sent_lsn         | 0/303BE38
+write_lsn        | 0/303BE38
+flush_lsn        | 0/303BE38
+replay_lsn       | 0/303BE38
+write_lag        |
+flush_lag        |
+replay_lag       |
+--More--
+``` 
+<br>
+
+
 
 
 
