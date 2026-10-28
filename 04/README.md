@@ -130,6 +130,62 @@ replay_lag       |
 ``` 
 <br>
 
+Pembahasan : <br>
+
+### 5. Cek Status Recovery di Replica Server
+
+<img src="images/10_install_docker.png" width="700"><br>
+
+Pembahasan : <br>
+
+### 6. Uji Pengisian Data di Primary 
+
+```
+Asus@LAPTOP-ET8TC1DC UCRT64 ~/OneDrive/Desktop/prak-dis-dec/04/streaming-replication (main)
+$ docker exec -it streaming-replication-postgres_primary-1 psql -U zuser -d zdb
+psql (18.3)
+Type "help" for help.
+
+zdb=# CREATE TABLE testrep (first INT, second VARCHAR(15));
+ond) VALUES (23, 'Test ke dua');
+SELECT * FROM testrep;
+\qCREATE TABLE
+zdb=# INSERT INTO testrep (first, second) VALUES (21, 'Test pertama');
+INSERT 0 1
+zdb=# INSERT INTO testrep (first, second) VALUES (23, 'Test ke dua');
+INSERT 0 1
+zdb=# SELECT * FROM testrep;
+ first |    second
+-------+--------------
+    21 | Test pertama
+    23 | Test ke dua
+(2 rows)
+```
+<br>
+
+Pembahasan : <br>
+
+### 7. Verifikasi Data di Replica
+
+### Sebelum Pembuatan Tabel
+
+<img src="images/11_install_docker.png" width="700"><br>
+
+Pembahasan : <br>
+
+Menunjukkan kondisi awal server replica di mana belum ada tabel sama sekali (Did not find any tables.). Ini membuktikan bahwa replica benar-benar dalam keadaan bersih sebelum data ditambahkan di primary.
+
+### Setelah Pembuatan Tabel & Sinkronisasi
+
+<img src="images/12_install_docker.png" width="700"><br>
+
+Pembahasan : <br>
+
+Menunjukkan kondisi replica setelah membuat tabel testrep dan mengisi datanya dari primary. Tampilan ini membuktikan bahwa proses streaming replication berhasil mereplikasi data secara real-time.
+
+## 4.1.5 High-Availability
+
+
 
 
 
