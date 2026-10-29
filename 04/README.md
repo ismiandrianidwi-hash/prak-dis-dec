@@ -351,9 +351,6 @@ Server:
  Firewall Backend: iptables
 ```
 
-Pembahasan : <br>
-
-
 ## 4.2.2. Struktur direktori dan file 
 
 Menyiapkan struktur direktori kerja `ignite3-cluster` beserta berkas konfigurasi `docker-compose.yml`, folder dataset `sql`, dan berkas skrip `env.sh`:<br>
