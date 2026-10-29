@@ -788,7 +788,9 @@ Menghentikan dan menghapus seluruh container kluster Apache Ignite setelah prakt
 
 Pembahasan : <br>
 
-Perintah `docker compose down` digunakan untuk menghentikan seluruh layanan tiga node Apache Ignite (`ignite3-node1-1`, `ignite3-node2-1`, `ignite3-node3-1`) dan menghapus jaringan virtual `ignite3_default` secara bersih. <br>
+Praktikum ini menguji konfigurasi, inisialisasi, dan replikasi data terdistribusi multi-node pada Apache Ignite 3.1.0 menggunakan Docker.<br>
+Tahap awal dimulai dengan membuat direktori kerja ignite3-cluster yang berisi docker-compose.yml untuk mendefinisikan tiga node (ignite3-node1-1, ignite3-node2-1, dan ignite3-node3-1), folder sql berisi file skema DDL (schema.sql) dan data DML (invoices.sql, dll), serta skrip env.sh. Melalui perintah docker compose up -d, ketiga container diaktifkan dengan port REST API khusus (10300–10302). Selanjutnya, Apache Ignite CLI dijalankan dari container untuk terhubung ke Node 1 (http://localhost:10300) dan menginisialisasi grup metastorage melalui perintah cluster init --name=ignite3 --metastorage-group=node1,node2,node3. Perintah cluster status mengonfirmasi bahwa kluster ignite3 telah aktif dengan 3 node saling terhubung. <br>   
+Pengisian data dilakukan dengan menjalankan Ignite CLI yang di-mount ke direktori ./sql menggunakan MSYS_NO_PATHCONV=1 agar path Windows/Git Bash tidak kustom-terkonversi. File schema.sql dieksekusi di Node 1 (10300) untuk membuat tabel skema PUBLIC, dilanjutkan file-file DML untuk memasukkan dataset transaksi. Untuk menguji replikasi, koneksi CLI dipindahkan ke Node 2 (connect http://localhost:10301) dan Node 3 (connect http://localhost:10302). Eksekusi kueri analitik agregasi pendapatan bulanan pada Node 2 dan Node 3 menghasilkan data yang identik secara presisi dengan Node 1. Hal ini membuktikan arsitektur Master-Master (Multi-Master) Apache Ignite, di mana data ter-replikasi secara real-time dan dapat diakses dari node mana saja secara transparan. Praktikum diakhiri dengan mengeksekusi docker compose down untuk menghapus seluruh container dan jaringan virtual secara bersih.. <br>
 
 # KESIMPULAN 
 
