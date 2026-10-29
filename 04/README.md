@@ -229,4 +229,198 @@ Untuk mematikan semua primary dan replika:<br>
 
 # 4.2 Replikasi Master-Master Menggunakan Apache Ignite
 
+## 4.2.1 Prasyarat
+### 1. Persyarat
+#### 1. Instalasi Docker telah dilaksanakan.
+
+<img src="images/01_install_docker.png" width="700"> <br>
+
+#### 2. Instalansi Docker Compose Telah Dilaksanakan
+
+<img src="images/16_install_docker.png" width="700"> <br>
+
+#### 3. Daemon dockerd telah diaktifkan
+
+```
+Asus@LAPTOP-ET8TC1DC UCRT64 ~/OneDrive/Desktop/prak-dis-dec/04/streaming-replication (main)
+$ docker info
+Client:
+ Version:    29.9.2
+ Context:    desktop-linux
+ Debug Mode: false
+ Plugins:
+  agent: Docker AI Agent Runner (Docker Inc.)
+    Version:  v1.152.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-agent.exe
+  ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+    Version:  v1.33.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.38.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.6.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+  debug: Get a shell into any image or container (Docker Inc.)
+    Version:  0.49.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+  desktop: Docker Desktop commands (Docker Inc.)
+    Version:  4.96.3
+    Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+  dhi: CLI for managing Docker Hardened Images (Docker Inc.)
+    Version:  v0.0.9
+    Path:     C:\Program Files\Docker\cli-plugins\docker-dhi.exe
+  extension: Manages Docker extensions (Docker Inc.)
+    Version:  v0.2.32
+    Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+  init: Creates Docker-related starter files for your project (Docker Inc.)
+    Version:  v1.4.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+  mcp: Docker MCP Plugin (Docker Inc.)
+    Version:  v0.44.2
+    Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+  model: Docker Model Runner (Docker Inc.)
+    Version:  v1.2.9
+    Path:     C:\Program Files\Docker\cli-plugins\docker-model.exe
+  offload: Docker Offload (Docker Inc.)
+    Version:  v0.7.19
+    Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+  pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+    Version:  v0.3.2
+    Path:     C:\Program Files\Docker\cli-plugins\docker-pass.exe
+  sandbox: "docker sandbox" is deprecated, use Docker Sandboxes instead (Docker Inc.)
+    Version:  v0.13.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+  scout: Docker Scout (Docker Inc.)
+    Version:  v1.27.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-scout.exe
+
+Server:
+ Containers: 2
+  Running: 1
+  Paused: 0
+  Stopped: 1
+ Images: 1
+ Server Version: 29.9.2
+ Storage Driver: overlayfs
+  driver-type: io.containerd.snapshotter.v1
+ Logging Driver: local
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ CDI spec directories:
+  /etc/cdi
+  /var/run/cdi
+ Discovered Devices:
+  cdi: docker.com/gpu=webgpu
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 nvidia runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: b7a25261e029d68978bbf290df0a62fc819b3c51
+ runc version: v1.5.2-0-g29dd3dc2
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.18.54.1-microsoft-standard-WSL2
+ Operating System: Docker Desktop
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 8
+ Total Memory: 7.576GiB
+ Name: docker-desktop
+ ID: 66b947b0-50b3-4ebd-a10f-3d952041cfc5
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ HTTP Proxy: http.docker.internal:3128
+ HTTPS Proxy: http.docker.internal:3128
+ No Proxy: hubproxy.docker.internal
+ Labels:
+  com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+ Experimental: false
+ Insecure Registries:
+  hubproxy.docker.internal:5555
+  127.0.0.0/8
+  ::1/128
+ Live Restore Enabled: false
+ Firewall Backend: iptables
+```
+
+Pembahasan : <br>
+
+
+## 4.2.2. Struktur direktori dan file 
+
+Menyiapkan struktur direktori kerja `ignite3-cluster` beserta berkas konfigurasi `docker-compose.yml`, folder dataset `sql`, dan berkas skrip `env.sh`:<br>
+
+<img src="images/17_install_docker.png" width="700"> <br>
+
+Nama berkas saya adalah docker-compose.yml (pakai .yml), sedangkan nama default di beberapa perintah adalah .yaml. Jadi saat menjalankan perintah docker compose, saya menambahkan : <br>
+
+<img src="images/18_install_docker.png" width="700"> <br>
+
+Docker akan otomatis membaca berkas docker-compose.yml tersebut <br>
+
+Pembahasan : <br>
+
+Pada tahap ini dilakukan penataan struktur direktori kerja khusus untuk kluster Apache Ignite 3.1.0 guna memisahkan lingkungan kerja dari modul sebelumnya. Berkas `docker-compose.yml` disiapkan untuk mendefinisikan tiga node layanan Apache Ignite. Selanjutnya, berkas arsip `sql.zip` diunduh dan diekstrak ke dalam folder `sql` yang berisi sekumpulan berkas DDL dan DML (`schema.sql`, `tracks.sql`, `invoices.sql`, dll) untuk kebutuhan pengisian basis data terdistribusi. Selain itu, berkas `env.sh` dibuat untuk menyimpan *alias* perintah Docker Compose dan Apache Ignite CLI agar mempermudah proses eksekusi CLI selama praktikum. <br>
+
+## 4.2.3 Menjalankan docker-compose
+
+Menjalankan 3 node cluster Apache Ignite 3.1.0 menggunakan Docker Compose serta mengecek status dan IP address dari masing-masing node: <br>
+
+### 1. Menjalankan Layanan Cluster:
+
+<img src="images/19_install_docker.png" width="700"> <br>
+
+### 2. Memeriksa Status Container Active:
+
+<img src="images/20_install_docker.png" width="700"> <br>
+
+### 3. Memeriksa IP Address Masing-Masing Node:
+
+<img src="images/21_install_docker.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Perintah `docker compose up -d` digunakan untuk mengunduh image `apacheignite/ignite:3.1.0` dari DockerHub dan mengaktifkan tiga container node (`ignite3-node1-1`, `ignite3-node2-1`, dan `ignite3-node3-1`). Berdasarkan hasil `docker ps`, ketiga node berjalan aktif dengan port REST API 10300, 10301, dan 10302 yang terbuka untuk manajemen administrative cluster. Selanjutnya, perintah `docker inspect` digunakan untuk mengidentifikasi alamat IP internal yang dialokasikan Docker pada setiap container node dalam jaringan virtual. <br>
+
+## 4.2.4 Inisialisasi cluster 
+
+Melakukan inisialisasi kluster Apache Ignite 3.1.0 dan memeriksa status kluster melalui Apache Ignite CLI: <br>
+
+<img src="images/22_install_docker.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Layanan Apache Ignite CLI dijalankan melalui container Docker untuk terhubung ke node utama (`http://localhost:10300`). Perintah `cluster init --name=ignite3 --metastorage-group=node1,node2,node3` dieksekusi untuk menginisialisasi grup metastorage terdistribusi pada ketiga node (`node1`, `node2`, dan `node3`). Setelah inisialisasi berhasil, perintah `cluster status` dijalankan untuk memverifikasi kondisi kluster. Output menunjukkan bahwa kluster bernama `ignite3` telah berada dalam status **`active`** dengan total 3 node yang saling terhubung dan siap memproses transaksi data.<br>
+
+## 4.2.5 Eksekusi Perintah-Perintah SQL
+
+Mengeksekusi skema basis data dan dataset sampel pada Node 1 serta memverifikasi propagasi replikasi terdistribusi pada Node 2 dan Node 3. <br>
+
+### 1. Eksekusi Skema dan Dataset pada Node 1
+
+Mengeksekusi berkas `schema.sql` beserta dataset DML pendukung melalui Ignite CLI yang telah di-mount dengan direktori lokal `./sql`:<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

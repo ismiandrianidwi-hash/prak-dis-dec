@@ -1,0 +1,5 @@
+alias dcu="sudo docker-compose up -d" 
+alias dcd="sudo docker-compose down" 
+alias dps="sudo docker ps" 
+alias dclm="sudo docker run --rm -it --network=host -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -v ./sql:/opt/ignite/sql apacheignite/ignite:3.1.0 cli" 
+alias dcli="sudo docker run --rm -it --network=host -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 apacheignite/ignite:3.1.0 cli"
