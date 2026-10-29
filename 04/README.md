@@ -780,7 +780,18 @@ sql-cli> SELECT
 ║ 2020-01   │ 6            │ 6             │ 35.64          │ 5.9400000000000000 ║
 ╚═══════════╧══════════════╧═══════════════╧════════════════╧════════════════════╝
 ```
- 
+ ### 6. Mematikan Cluster
+
+Menghentikan dan menghapus seluruh container kluster Apache Ignite setelah praktikum selesai: <br>
+
+<img src="images/23_install_docker.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Perintah `docker compose down` digunakan untuk menghentikan seluruh layanan tiga node Apache Ignite (`ignite3-node1-1`, `ignite3-node2-1`, `ignite3-node3-1`) dan menghapus jaringan virtual `ignite3_default` secara bersih. <br>
+
+
+
 
 
 
