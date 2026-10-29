@@ -790,7 +790,11 @@ Pembahasan : <br>
 
 Perintah `docker compose down` digunakan untuk menghentikan seluruh layanan tiga node Apache Ignite (`ignite3-node1-1`, `ignite3-node2-1`, `ignite3-node3-1`) dan menghapus jaringan virtual `ignite3_default` secara bersih. <br>
 
+# KESIMPULAN 
 
+Praktikum implementasi kluster Apache Ignite 3.1.0 berbasis Docker ini berhasil membuktikan keandalan arsitektur basis data terdistribusi dalam mengelola dan mereplikasi data multi-node secara konsisten. Penggunaan Docker Compose mempermudah proses penyebaran serta pengoperasian tiga node kluster dalam lingkungan terisolasi. Melalui Apache Ignite CLI, inisialisasi *metastorage group* pada seluruh node sukses dilakukan hingga kluster berada dalam kondisi aktif. <br>
+
+Proses pengisian skema dan *dataset* sampel pada Node 1 terbukti langsung ter-replikasi secara otomatis dan *real-time* ke Node 2 maupun Node 3. Hal ini menegaskan bahwa Apache Ignite menerapkan arsitektur *Multi-Master* (Master-Master), di mana setiap node dalam kluster memiliki peranan dan kemampuan yang setara untuk menangani operasi pembacaan, penulisan, maupun eksekusi kueri analitik SQL kompleks secara transparan dan berkinerja tinggi.
 
 
 
