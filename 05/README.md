@@ -40,7 +40,7 @@ Circuit Breaker adalah pola desain (design pattern) pada arsitektur microservice
 
 Pola ini bekerja berdasarkan tiga status utama (State Machine): <br>
 
-<!-- Menghasilkan: ○ --> Closed: Kondisi normal. Permintaan diizinkan lewat sambil terus dipantau. Jika rasio kegagalan melampaui batas ambang (threshold), status berubah menjadi Open.
+<-1> Closed: Kondisi normal. Permintaan diizinkan lewat sambil terus dipantau. Jika rasio kegagalan melampaui batas ambang (threshold), status berubah menjadi Open.
 <!-- Menghasilkan: ○ --> Open: Permintaan baru langsung ditolak secara instan (fast-fail) tanpa menghubungi layanan target untuk memberi waktu bagi layanan tersebut pulih.
 <!-- Menghasilkan: ○ --> Half-Open: Setelah melewati batas waktu tunggu (timeout), sirkuit mencoba mengirimkan sejumlah kecil permintaan uji coba. Jika permintaan tersebut berhasil, status kembali ke Closed; namun jika gagal, status akan kembali ke Open.   
 
