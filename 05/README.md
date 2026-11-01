@@ -40,9 +40,9 @@ Circuit Breaker adalah pola desain (design pattern) pada arsitektur microservice
 
 Pola ini bekerja berdasarkan tiga status utama (State Machine): <br>
 
-<a>Closed: Kondisi normal. Permintaan diizinkan lewat sambil terus dipantau. Jika rasio kegagalan melampaui batas ambang (threshold), status berubah menjadi Open.
-<b> Open: Permintaan baru langsung ditolak secara instan (fast-fail) tanpa menghubungi layanan target untuk memberi waktu bagi layanan tersebut pulih.
-<c> Half-Open: Setelah melewati batas waktu tunggu (timeout), sirkuit mencoba mengirimkan sejumlah kecil permintaan uji coba. Jika permintaan tersebut berhasil, status kembali ke Closed; namun jika gagal, status akan kembali ke Open.   
+- Closed: Kondisi normal. Permintaan diizinkan lewat sambil terus dipantau. Jika rasio kegagalan melampaui batas ambang (threshold), status berubah menjadi Open.
+- Open: Permintaan baru langsung ditolak secara instan (fast-fail) tanpa menghubungi layanan target untuk memberi waktu bagi layanan tersebut pulih.
+- Half-Open: Setelah melewati batas waktu tunggu (timeout), sirkuit mencoba mengirimkan sejumlah kecil permintaan uji coba. Jika permintaan tersebut berhasil, status kembali ke Closed; namun jika gagal, status akan kembali ke Open.   
 
 # PRAKTIK
 # 4.1 Load Balancing Aplikasi 
@@ -75,8 +75,10 @@ Pembahasan : <br>
 
 Setelah virtual environment aktif (ditandai dengan munculnya awalan nama environment pada terminal), dilakukan penginstalan dua dependensi utama: 
 
+- blacksheep: Framework web ASGI (Asynchronous Server Gateway Interface) berbasis Python yang dirancang untuk membangun aplikasi web async non-blocking berkinerja tinggi.
+- blacksheep-cli: Alat antarmuka baris perintah (Command Line Interface) bawaan yang disediakan oleh Blacksheep untuk mempermudah pembuatan kerangka awal (scaffolding) struktur proyek secara otomatis.
 
-
+Proses penginstalan menggunakan package manager (uv pip atau pip) berhasil mengunduh dan memasang kerangka kerja beserta dependensi pendukungnya (seperti uvicorn, pydantic, h11, dll.). Hal ini memastikan lingkungan pengembangan lokal siap untuk mengeksekusi dan mengonfigurasi aplikasi web berbasis Blacksheep pada tahap berikutnya.
 
 
 # KESIMPULAN
