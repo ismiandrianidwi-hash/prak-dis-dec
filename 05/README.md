@@ -40,10 +40,43 @@ Circuit Breaker adalah pola desain (design pattern) pada arsitektur microservice
 
 Pola ini bekerja berdasarkan tiga status utama (State Machine): <br>
 
-<-1> Closed: Kondisi normal. Permintaan diizinkan lewat sambil terus dipantau. Jika rasio kegagalan melampaui batas ambang (threshold), status berubah menjadi Open.
-<!-- Menghasilkan: ○ --> Open: Permintaan baru langsung ditolak secara instan (fast-fail) tanpa menghubungi layanan target untuk memberi waktu bagi layanan tersebut pulih.
-<!-- Menghasilkan: ○ --> Half-Open: Setelah melewati batas waktu tunggu (timeout), sirkuit mencoba mengirimkan sejumlah kecil permintaan uji coba. Jika permintaan tersebut berhasil, status kembali ke Closed; namun jika gagal, status akan kembali ke Open.   
+<a>Closed: Kondisi normal. Permintaan diizinkan lewat sambil terus dipantau. Jika rasio kegagalan melampaui batas ambang (threshold), status berubah menjadi Open.
+<b> Open: Permintaan baru langsung ditolak secara instan (fast-fail) tanpa menghubungi layanan target untuk memberi waktu bagi layanan tersebut pulih.
+<c> Half-Open: Setelah melewati batas waktu tunggu (timeout), sirkuit mencoba mengirimkan sejumlah kecil permintaan uji coba. Jika permintaan tersebut berhasil, status kembali ke Closed; namun jika gagal, status akan kembali ke Open.   
 
 # PRAKTIK
+# 4.1 Load Balancing Aplikasi 
+## 1. Persiapan
+### Langkah 1: Persiapan Environment Workspace
+
+<img src="images/01_Mod5.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Pada tahap awal, dibuat sebuah direktori kerja baru bernama workspace-05 sebagai workspace terisolasi untuk seluruh berkas proyek praktikum. Pemisahan ruang kerja ini bertujuan agar struktur berkas proyek tidak bercampur dengan proyek lainnya.
+
+### Langkah 2: Membuat Virtual Environment Python
+
+<img src="images/02_Mod5.png" width="700"> <br>
+
+<img src="images/03_Mod5.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Selanjutnya, dilakukan pembuatan Virtual Environment Python (.venv). Penggunaan virtual environment merupakan praktik standar dalam pengembangan perangkat lunak berbasis Python untuk mengisolasi dependensi (packages/libraries) yang dibutuhkan oleh proyek. Dengan mengaktifkan .venv, paket-paket yang diinstal hanya akan terpasang di dalam ruang lingkup proyek tersebut dan tidak akan mengganggu atau berkonflik dengan paket Python tingkat sistem (system-wide Python).
+
+### Langkah 3: Menginstal Package Blacksheep & CLI
+
+<img src="images/04_Mod5.png" width="700"> <br>
+
+<img src="images/05_Mod5.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Setelah virtual environment aktif (ditandai dengan munculnya awalan nama environment pada terminal), dilakukan penginstalan dua dependensi utama: 
+
+
+
+
 
 # KESIMPULAN
