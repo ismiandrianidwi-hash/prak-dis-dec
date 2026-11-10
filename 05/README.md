@@ -221,9 +221,47 @@ Keberhasilan ini dibuktikan saat file dev.py dijalankan: <br>
 
 <img src="images/05_Mod5.png" width="700"> <br>
 
+Akses ke http://localhost:44777 menggunakan browser: <br>
+
+<img src="images/06_Mod5.png" width="700"> <br>
+
+muncul: <br>
+
+<img src="images/07_Mod5.png" width="700"> <br>
+
 Pembahasan : <br>
 
-Inisialisasi proyek dilakukan menggunakan perintah blacksheep create dengan menetapkan nama direktori blacksheep_lb, template mvc, serta konfigurasi berbasis TOML (settings.toml) untuk membentuk struktur aplikasi berbasis ASGI secara standar. Proses ini secara otomatis menghasilkan direktori proyek beserta berkas utama dan Dockerfile bawaan yang siap diproses ke tahap containerization. Pengujian dilanjutkan dengan menjalankan python dev.py, di mana server ASGI (Uvicorn) berhasil diinisialisasi dan mendengarkan permintaan di port http://localhost:44777 tanpa kendala modul. Penghentian layanan secara aman (graceful shutdown) mengonfirmasi bahwa aplikasi web Blacksheep berfungsi 100% dan siap diintegrasikan dengan Docker Compose.
+Inisialisasi proyek dilakukan menggunakan perintah blacksheep create dengan menetapkan nama direktori blacksheep_lb, template mvc, serta konfigurasi berbasis TOML (settings.toml) untuk membentuk struktur aplikasi berbasis ASGI secara standar. Proses ini secara otomatis menghasilkan direktori proyek beserta berkas utama dan Dockerfile bawaan yang siap diproses ke tahap containerization. Pengujian dilanjutkan dengan menjalankan python dev.py, di mana server ASGI (Uvicorn) berhasil diinisialisasi dan mendengarkan permintaan di port http://localhost:44777 tanpa kendala modul. Penghentian layanan secara aman (graceful shutdown) mengonfirmasi bahwa aplikasi web Blacksheep berfungsi 100% dan siap diintegrasikan dengan Docker Compose. <br>
+
+Dalam direktori blacksheep_lb sudah ada Dockerfile yang bisa kita gunakan <br>
+
+```
+Asus@LAPTOP-ET8TC1DC UCRT64 ~/OneDrive/Desktop/prak-dis-dec/05/workspace-05/blacksheep_lb (main)
+$ ls -la
+total 34
+drwxr-xr-x 1 Asus 197121    0 Nov 10 11:39 ./
+drwxr-xr-x 1 Asus 197121    0 Nov 10 11:39 ../
+-rw-r--r-- 1 Asus 197121   73 Nov 10 11:39 .dockerignore
+-rw-r--r-- 1 Asus 197121  146 Nov 10 11:39 .flake8
+-rw-r--r-- 1 Asus 197121 1274 Nov 10 11:39 .gitignore
+drwxr-xr-x 1 Asus 197121    0 Nov 10 11:41 app/
+-rw-r--r-- 1 Asus 197121 1121 Nov 10 11:39 dev.py
+-rw-r--r-- 1 Asus 197121 1223 Nov 10 11:39 Dockerfile
+drwxr-xr-x 1 Asus 197121    0 Nov 10 11:41 domain/
+-rw-r--r-- 1 Asus 197121   35 Nov 10 11:39 pyproject.toml
+-rw-r--r-- 1 Asus 197121 1727 Nov 10 11:39 README.md
+-rw-r--r-- 1 Asus 197121  156 Nov 10 11:39 requirements.txt
+-rw-r--r-- 1 Asus 197121   34 Nov 10 11:39 settings.dev.toml
+-rw-r--r-- 1 Asus 197121  126 Nov 10 11:39 settings.toml
+drwxr-xr-x 1 Asus 197121    0 Nov 10 11:39 tests/
+(workspace-05) 
+```
+
+Pembahasan : <br>
+
+Hasil eksekusi perintah ls -la pada direktori blacksheep_lb mengonfirmasi bahwa seluruh komponen kerangka proyek aplikasi web Blacksheep berbasis arsitektur Model-View-Controller (MVC) telah terbentuk secara utuh. Direktori proyek terdiri dari folder utama app/, domain/, dan tests/ yang mengelola logika aplikasi dan pengujian unit, serta dikendalikan oleh berkas konfigurasi settings.toml dan settings.dev.toml untuk memisahkan mode pengembangan. Selain itu, direktori ini dilengkapi berkas requirements.txt dan pyproject.toml sebagai manajer dependensi Python, skrip eksekusi lokal dev.py, serta berkas Dockerfile dan .dockerignore yang siap digunakan untuk konfigurasi containerization dan load balancing menggunakan Docker Compose. <br>
+
+## 3. Siapkan Dockerfile dan docker-compose.yml
 
 
 
