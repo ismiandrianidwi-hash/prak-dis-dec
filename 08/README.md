@@ -35,5 +35,5 @@ SQLite adalah sistem manajemen basis data relasional ringan berbasis berkas tung
 uv berfungsi sebagai pengelola versi Python, virtual environment, dan instalasi paket secara cepat. Sementara itu, Uvicorn merupakan implementasi server ASGI yang bertugas menjalankan aplikasi FastAPI agar dapat diakses melalui jaringan lokal maupun pengujian via peramban web dan perintah curl.
 
 # PRAKTIK 
-### 1. Persiapan Environment & Pustaka (PowerShell)
+## 1. Persiapan Environment & Pustaka (PowerShell)
 #### Cek & atur versi Python dengan uv:
