@@ -51,10 +51,41 @@ Sebelum digunakan pertama kali, direktori penyimpanan metadata NameNode harus di
 Silakan tinjau bagian Tujuan dan Dasar Teori di atas. Jika sudah sesuai dengan format laporan di kampus Anda (atau jika ada penyesuaian gaya bahasa), beri tahu saya kapan saja Anda siap untuk melanjutkan ke bagian Langkah-Langkah Pengerjaan Laporan dan analisis hasil praktikumnya.
 
 # PRAKTIK
-## 1. Unduh Apache Hadoop
+## Tahap 1: Konfigurasi Layanan SSH & Passwordless SSH
+### 1. Nyalakan layanan SSH (sshd):
 
-<img src="images/01_Pert 6.png" width="700"> <br>
+<img src="images/01-pert06.png" width="700"> <br>
+
+Pembahasan : <br>
+Sebelum menjalankan layanan Hadoop, daemon SSH (sshd) diaktifkan terlebih dahulu menggunakan perintah sudo service ssh start (menyesuaikan lingkungan WSL Ubuntu terhadap perintah dinitctl/systemctl pada modul). <br>   
+
+Layanan sshd wajib aktif dan dikonfigurasi agar dapat diakses tanpa kata sandi (passwordless SSH) melalui pembuatan pasangan kunci RSA (ssh-keygen) yang didaftarkan ke dalam berkas authorized_keys. Konfigurasi ini diperlukan karena skrip manajemen klaster Hadoop (start-dfs.sh dan stop-dfs.sh) memanfaatkan koneksi SSH dan pdsh secara otomatis di latar belakang untuk mengontrol jalannya NameNode, DataNode, dan Secondary NameNode pada localhost tanpa intervensi input kata sandi secara manual.
+
+### 2. Buat pasangan kunci SSH RSA tanpa passphrase dan daftarkan ke authorized_keys:
+
+<img src="images/02-pert06.png" width="700"> <br>
 
 Pembahasan : <br>
 
-## 2. Instalasi Apache Hadoop 
+Pada tahap ini dilakukan pembuatan pasangan kunci kriptografi RSA serta pengaturan izin akses agar koneksi SSH ke localhost dapat berlangsung otomatis tanpa meminta kata sandi. Berdasarkan hasil eksekusi perintah pada gambar di atas, terdapat tiga tahapan utama yang dijalankan:
+
+- ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa: Menghasilkan pasangan kunci private (id_rsa) dan kunci public (id_rsa.pub) dengan algoritma RSA 3072-bit tanpa passphrase (-P ""). Karena berkas kunci sebelumnya sudah tersedia di direktori /home/asus/.ssh/, sistem menampilkan konfirmasi overwrite (y) dan memperbarui berkas kunci tersebut dengan fingerprint SHA256 yang baru.
+- cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys: Menambahkan kunci publik yang baru dibuat ke dalam daftar kunci yang diotorisasi (authorized_keys) sehingga mesin lokal mengenali dan memercayai kunci tersebut saat proses autentikasi.
+- chmod 0600 ~/.ssh/authorized_keys: Mengubah hak akses berkas authorized_keys menjadi read/write hanya untuk pemilik akun (asus) demi memenuhi standar keamanan protokol SSH agar autentikasi berbasis kunci dapat diterima oleh daemon sshd. <br>
+
+Konfigurasi ini menjadi prasyarat penting dalam arsitektur Hadoop karena skrip pengelolaan klaster (start-dfs.sh dan stop-dfs.sh) menggunakan koneksi SSH di latar belakang untuk menginisialisasi maupun menghentikan layanan NameNode, DataNode, dan Secondary NameNode secara serentak tanpa intervensi input kata sandi secara manual.
+
+### 3. Uji koneksi ssh localhost:
+
+<img src="images/03-pert06.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Pengujian dilakukan dengan menjalankan perintah ssh localhost untuk memverifikasi autentikasi tanpa kata sandi. Pada koneksi pertama, sistem meminta konfirmasi keaslian host (127.0.0.1) lalu menyimpan sidik jari kunci ED25519 ke dalam daftar known_hosts setelah dikonfirmasi yes. Hasilnya, sesi terminal berhasil masuk ke lingkungan Ubuntu WSL 2 secara otomatis tanpa meminta kata sandi, yang menandakan konfigurasi passwordless SSH telah berhasil dan siap digunakan oleh skrip klaster Hadoop.   
+
+### 4. Pastikan pdsh menggunakan ssh:
+
+<img src="images/04-pert06.png" width="700"> <br>
+
+Pembahasan : <br>
+
