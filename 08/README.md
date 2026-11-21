@@ -36,4 +36,168 @@ uv berfungsi sebagai pengelola versi Python, virtual environment, dan instalasi 
 
 # PRAKTIK 
 ## 1. Persiapan Environment & Pustaka (PowerShell)
-#### Cek & atur versi Python dengan uv:
+### Cek & atur versi Python dengan uv:
+
+#### uv python list :
+
+```
+PS C:\Users\Asus\OneDrive\Desktop\prak-dis-dec\08> uv python list
+cpython-3.16.0a1-windows-x86_64-none                 <download available>
+cpython-3.16.0a1+freethreaded-windows-x86_64-none    <download available>
+cpython-3.15.0-windows-x86_64-none                   C:\Users\Asus\AppData\Local\Programs\Python\Python315\python.exe
+cpython-3.15.0-windows-x86_64-none                   <download available>
+cpython-3.15.0+freethreaded-windows-x86_64-none      <download available>
+cpython-3.14.8-windows-x86_64-none                   C:\Users\Asus\AppData\Roaming\uv\python\cpython-3.14.8-windows-x86_64-none\python.exe
+cpython-3.14.8-windows-x86_64-none                   C:\Users\Asus\.local\bin\python3.14.exe
+cpython-3.14.8-windows-x86_64-none                   C:\Users\Asus\AppData\Roaming\uv\python\cpython-3.14-windows-x86_64-none\python.exe
+cpython-3.14.8+freethreaded-windows-x86_64-none      <download available>
+cpython-3.13.16-windows-x86_64-none                  <download available>
+cpython-3.13.16+freethreaded-windows-x86_64-none     <download available>
+cpython-3.12.15-windows-x86_64-none                  <download available>
+cpython-3.11.17-windows-x86_64-none                  <download available>
+cpython-3.10.22-windows-x86_64-none                  <download available>
+cpython-3.9.25-windows-x86_64-none                   <download available>
+cpython-3.8.20-windows-x86_64-none                   <download available>
+pypy-3.12.14-windows-x86_64-none                     <download available>
+pypy-3.11.16-windows-x86_64-none                     <download available>
+pypy-3.10.16-windows-x86_64-none                     <download available>
+pypy-3.9.19-windows-x86_64-none                      <download available>
+pypy-3.8.16-windows-x86_64-none                      <download available>
+graalpy-3.13.0-windows-x86_64-none                   <download available>
+graalpy-3.12.0-windows-x86_64-none                   <download available>
+graalpy-3.11.0-windows-x86_64-none                   <download available>
+graalpy-3.10.0-windows-x86_64-none                   <download available>
+```
+
+#### uv python install 3.14.4
+
+<img src="images/01-pert 08.png" width="700"> <br>
+
+#### uv python pin 3.14.4
+
+<img src="images/02-pert 08.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Pada tahap awal praktikum, dilakukan konfigurasi versi interpreter Python di dalam direktori kerja pertemuan 8 (...\prak-dis-dec\08) menggunakan manajer paket uv melalui terminal PowerShell. Berikut rincian eksekusi perintah yang dilakukan: <br>
+
+1. Pemeriksaan Daftar Versi Python (uv python list)
+
+Perintah ini digunakan untuk memeriksa daftar versi interpreter Python yang tersedia, baik yang sudah terpasang secara lokal maupun yang siap diunduh dari repositori uv. Berdasarkan keluaran terminal, sistem sebelumnya hanya memiliki Python 3.15.0 dan 3.14.8, sehingga versi 3.14.4 yang dipersyaratkan pada modul belum tersedia di sistem lokal.
+
+2. Instalasi Python 3.14.4 (uv python install 3.14.4)
+
+Setelah memastikan versi yang dibutuhkan belum tersedia, perintah ini dijalankan untuk mengunduh dan memasang interpreter cpython-3.14.4-windows-x86_64-none secara otomatis ke dalam direktori penyimpanan internal uv. Proses instalasi berhasil diselesaikan dalam waktu 14,89 detik.
+
+3. Penguncian Versi Python (uv python pin 3.14.4)
+
+Perintah terakhir ini membuat berkas konfigurasi .python-version berisi nilai 3.14.4 di dalam direktori proyek 08. Tujuannya adalah mengunci agar seluruh lingkungan virtual (virtual environment) serta eksekusi kode di dalam folder praktikum ini secara konsisten menggunakan Python 3.14.4.   
+
+### Buat dan aktifkan virtual environment :
+#### uv venv
+
+<img src="images/03-pert 08.png" width="700"> <br>
+
+####  .venv\Scripts\Activate.ps1
+
+<img src="images/04-pert 08.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Setelah menentukan versi Python yang digunakan pada direktori kerja, langkah berikutnya adalah mengisolasi lingkungan pengembangan proyek menggunakan virtual environment. Pembuatan lingkungan virtual ini bertujuan agar seluruh dependensi dan pustaka (library) yang akan diinstal tidak bercampur atau berbenturan dengan konfigurasi Python global pada sistem operasi Windows. Berikut rincian eksekusi perintah yang dilakukan: 
+
+1. Pembuatan Virtual Environment (uv venv)
+
+Perintah ini membuat direktori lingkungan virtual baru bernama .venv di dalam folder proyek 08. Berdasarkan keluaran terminal (Using CPython 3.14.4), uv secara otomatis mendeteksi berkas .python-version dari langkah sebelumnya dan menggunakan interpreter CPython 3.14.4 sebagai basis lingkungan virtual tersebut.
+
+2. Aktivasi Virtual Environment (.venv\Scripts\Activate.ps1)
+
+Berbeda dengan sistem operasi Linux yang menggunakan skrip aktivasi berbasis shell (source .venv/bin/activate) seperti pada modul, pada terminal PowerShell di Windows aktivasi dilakukan dengan menjalankan skrip .venv\Scripts\Activate.ps1. Eksekusi perintah ini berhasil tanpa kendala kebijakan eksekusi (Execution Policy), yang ditandai dengan kesiapan terminal untuk menggunakan interpreter serta paket di dalam lingkungan .venv pada tahap instalasi berikutnya.
+
+## 2. Membuat Database & Tabel
+### Instal pustaka FastAPI dan SQLModel:
+
+```
+(08) PS C:\Users\Asus\OneDrive\Desktop\prak-dis-dec\08> uv pip install --link-mode=copy "fastapi[standard]" sqlmodel
+Resolved 61 packages in 27.78s
+Prepared 30 packages in 7.03s
+Installed 45 packages in 4.88s
+ + agent-detector==2.0.0                                                                                        
+ + certifi==2026.10.23                                                                                          
+ + charset-normalizer==3.5.2                                                                                    
+ + click==8.5.1                                                                                                 
+ + colorama==0.4.6                                                                                              
+ + detect-installer==0.2.1                                                                                      
+ + dnspython==2.9.2                                                                                             
+ + email-validator==2.4.0                                                                                       
+ + fastapi-cli==0.0.34                                                                                          
+ + fastapi-cloud-cli==0.28.0                                                                                    
+ + fastar==0.12.0                                                                                               
+ + googleapis-common-protos==1.76.0                                                                             
+ + h11==0.16.0                                                                                                  
+ + httpcore==1.0.9                                                                                              
+ + httpcore2==2.16.2                                                                                            
+ + httptools==0.9.0                                                                                             
+ + httpx==0.28.1                                                                                                
+ + httpx2==2.16.2                                                                                               
+ + jinja2==3.1.6                                                                                                
+ + markdown-it-py==4.3.0                                                                                        
+ + markupsafe==3.0.4                                                                                            
+ + mdurl==0.1.2                                                                                                 
+ + opentelemetry-exporter-http-transport==0.66b2                                                                
+ + opentelemetry-exporter-otlp-common==0.66b2                                                                   
+ + opentelemetry-exporter-otlp-proto-common==1.45.2
+ + opentelemetry-exporter-otlp-proto-http==1.45.2
+ + opentelemetry-proto==1.45.2
+ + opentelemetry-sdk==1.45.2
+ + opentelemetry-semantic-conventions==0.66b2
+ + protobuf==7.36.2
+ + pydantic-extra-types==2.11.1
+ + pygments==2.21.0
+ + python-multipart==0.0.34
+ + requests==2.34.2
+ + rich==15.0.0
+ + rich-toolkit==0.20.6
+ + rignore==0.8.1
+ + sentry-sdk==2.75.0
+ + shellingham==1.5.4
+ + truststore==0.10.5
+ + typer==0.29.2
+ + urllib3==2.8.0
+ + uvicorn==0.54.0
+ + watchfiles==1.3.0
+ + websockets==17.4
+ ```
+
+ Pembahasan : <br>
+
+ Selain pustaka inti fastapi, sqlmodel, pydantic, dan sqlalchemy, ditambahkan juga instalasi extras "fastapi[standard]" menggunakan mode salin yang sama agar server ASGI uvicorn serta utilitas pendukungnya terpasang lengkap sesuai kebutuhan eksekusi pada modul. 
+
+### Buat database dan tabel sdm:
+#### Pemilihan Paket Binari Windows
+ <img src="images/05-pert 08.png" width="700"> <br>
+
+ Pembahasan : <br>
+
+ Pada kategori Precompiled Binaries for Windows (File Biner yang Sudah Dikompilasi untuk Windows), dipilih paket sqlite-tools-win-x64-3540100.zip yang berukuran sekitar 5,56 MiB. Paket ini dipilih karena berisi utilitas baris perintah lengkap—termasuk sqlite3.exe—yang kompatibel dengan arsitektur sistem operasi Windows 64-bit, berbeda dengan paket sqlite-dll yang hanya memuat pustaka dinamis tanpa antarmuka terminal, lalu ekstrak sqlite3.exe dan run .\sqlite3.exe departemen-sdm.db
+
+#### Masukkan 
+
+ <img src="images/06-pert 08.png" width="700"> <br>
+
+ Pembahasan : <br>
+
+ Pada tahap ini dilakukan inisialisasi berkas basis data lokal bernama departemen-sdm.db menggunakan antarmuka baris perintah sqlite3.exe versi 3.54.1. Selanjutnya, dibuat tabel sdm melalui kueri CREATE TABLE dengan tiga kolom utama, yakni id bertipe INTEGER PRIMARY KEY sebagai kunci utama otomatis, npp bertipe CHAR(6) untuk nomor pokok pegawai, serta nama bertipe VARCHAR(50) untuk nama pegawai. Tiga baris data karyawan kemudian dimasukkan menggunakan perintah INSERT INTO. Melalui kueri SELECT * FROM sdm; yang dipadukan dengan pengaturan .mode column dan .headers on, hasil verifikasi menampilkan ketiga data telah tersimpan secara terstruktur ke dalam basis data.
+
+## 3. Membuat & Menjalankan REST API
+### Buat file bernama service.py di dalam folder proyek yang sama
+
+ <img src="images/07-pert 08.png" width="700"> <br>
+
+ Pembahasan : <br>
+
+Pada tahap ini dibuat berkas kode sumber bernama service.py di dalam direktori proyek untuk membangun layanan backend RESTful API menggunakan framework FastAPI dan pustaka ORM SQLModel. Di dalam kode tersebut, didefinisikan kelas model Sdm yang mewarisi SQLModel dengan atribut id sebagai primary key, npp, dan nama guna memetakan struktur tabel sdm pada basis data departemen-sdm.db ke dalam objek Python. Koneksi ke berkas basis data lokal diinisialisasi menggunakan fungsi create_engine("sqlite:///departemen-sdm.db"), yang kemudian dikelola siklus transaksinya melalui fungsi generator get_session() menggunakan mekanisme dependency injection. Selanjutnya, diinisialisasi objek aplikasi app = FastAPI() serta dibuat rute endpoint @app.get("/sdm/") yang mengeksekusi kueri select(Sdm) untuk mengambil seluruh rekaman data dari tabel sdm dan mengembalikannya sebagai respons dalam format JSON.
+
+#### Jalankan server Uvicorn:
+
+
