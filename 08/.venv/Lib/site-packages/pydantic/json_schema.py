@@ -166,7 +166,8 @@ class _DefinitionsRemapping:
             # Deduplicate the schemas for each alternative; the idea is that we only want to remap to a new DefsRef
             # if it introduces no ambiguity, i.e., there is only one distinct schema for that DefsRef.
             for defs_ref in schemas_for_alternatives:
-                schemas_for_alternatives[defs_ref] = _deduplicate_schemas(schemas_for_alternatives[defs_ref])
+                if len(schemas_for_alternatives[defs_ref]) > 1:
+                    schemas_for_alternatives[defs_ref] = _deduplicate_schemas(schemas_for_alternatives[defs_ref])
 
             # Build the remapping
             defs_remapping: dict[DefsRef, DefsRef] = {}
@@ -728,11 +729,10 @@ class GenerateJsonSchema:
         Returns:
             The generated JSON schema.
         """
-        str_schema = core_schema.str_schema()
+        json_schema: JsonSchemaValue = {'type': 'string'}
         pattern = self.get_decimal_pattern(schema)
         if pattern is not None:
-            str_schema['pattern'] = pattern
-        json_schema = self.str_schema(str_schema)
+            json_schema['pattern'] = pattern
         if self.mode == 'validation':
             multiple_of = schema.get('multiple_of')
             le = schema.get('le')
@@ -1850,8 +1850,10 @@ class GenerateJsonSchema:
                 f"model_config['json_schema_extra']={json_schema_extra} should be a dict, callable, or None"
             )
 
-        if hasattr(cls, '__deprecated__'):
-            json_schema['deprecated'] = True
+        # Only the class decorated with `@deprecated` is deprecated, not its subclasses (the attribute is
+        # inherited, but the runtime only warns on instantiation of the decorated class).
+        if '__deprecated__' in cls.__dict__:
+            json_schema.setdefault('deprecated', True)
 
     def resolve_ref_schema(self, json_schema: JsonSchemaValue) -> JsonSchemaValue:
         """Resolve a JsonSchemaValue to the non-ref schema if it is a $ref schema.
@@ -1908,7 +1910,7 @@ class GenerateJsonSchema:
         if self.mode == 'serialization':
             # If you still want to include the field in the generated JSON schema,
             # override this method and return True
-            return not field.get('serialization_exclude')
+            return not field.get('serialization_exclude') and not field.get('init_only')
         elif self.mode == 'validation':
             return True
         else:

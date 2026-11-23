@@ -196,8 +196,19 @@ Installed 45 packages in 4.88s
 
  Pembahasan : <br>
 
-Pada tahap ini dibuat berkas kode sumber bernama service.py di dalam direktori proyek untuk membangun layanan backend RESTful API menggunakan framework FastAPI dan pustaka ORM SQLModel. Di dalam kode tersebut, didefinisikan kelas model Sdm yang mewarisi SQLModel dengan atribut id sebagai primary key, npp, dan nama guna memetakan struktur tabel sdm pada basis data departemen-sdm.db ke dalam objek Python. Koneksi ke berkas basis data lokal diinisialisasi menggunakan fungsi create_engine("sqlite:///departemen-sdm.db"), yang kemudian dikelola siklus transaksinya melalui fungsi generator get_session() menggunakan mekanisme dependency injection. Selanjutnya, diinisialisasi objek aplikasi app = FastAPI() serta dibuat rute endpoint @app.get("/sdm/") yang mengeksekusi kueri select(Sdm) untuk mengambil seluruh rekaman data dari tabel sdm dan mengembalikannya sebagai respons dalam format JSON.
+Layanan REST API dibangun menggunakan bahasa Python dengan pustaka FastAPI dan SQLModel sebagai ORM untuk menghubungkan aplikasi dengan database SQLite (departemen-sdm.db). Struktur tabel sdm direpresentasikan melalui kelas model Sdm (yang memuat atribut id, npp, dan nama), sementara koneksi ke database dikelola menggunakan fungsi sesi get_session. Sebuah endpoint HTTP GET didaftarkan pada rute /sdm/ (@app.get("/sdm/")) untuk mengeksekusi perintah query select(Sdm) dan mengembalikan seluruh data karyawan dari tabel dalam format JSON. Layanan ini kemudian dijalankan secara lokal melalui server ASGI Uvicorn pada port 8000 dengan perintah uvicorn service:app --reload.
 
 #### Jalankan server Uvicorn:
+
+ <img src="images/08-pert 08.png" width="700"> <br>
+
+ Pretty-print : <br>
+
+ <img src="images/09-pert 08.png" width="700"> <br>
+
+ Pembahasan : <br>
+
+ Pengujian layanan dilakukan dengan mengakses rute endpoint secara spesifik melalui alamat [http://127.0.0.1:8000/sdm/](http://127.0.0.1:8000/sdm/) (atau http://localhost:8000/sdm/) pada peramban web (browser). Penambahan path /sdm/ diperlukan karena alamat utama (127.0.0.1:8000) tidak memiliki endpoint terdaftar sehingga akan mengembalikan respons {"detail":"Not Found"}. Ketika rute /sdm/ diakses, server merespons dengan mengirimkan seluruh data karyawan dalam format JSON mentah, dan dengan mengaktifkan fitur Pretty-print pada browser, struktur data JSON tersebut ditampilkan secara terformat dan berjenjang sehingga mudah dibaca dan diverifikasi.
+
 
 
