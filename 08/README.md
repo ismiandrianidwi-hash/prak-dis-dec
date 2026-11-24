@@ -233,4 +233,37 @@ Pembahasan : <br>
 
 Pada tahap kedua, pengisian lima baris data ke dalam tabel produk pada basis data inventaris.db dilakukan secara terprogram menggunakan skrip Python (seed.py) dengan memanfaatkan pustaka SQLModel. Skrip ini mendefinisikan kelas model Produk untuk memetakan struktur tabel SQLite ke dalam objek Python (id, kode, nama, stok, harga, dan tersedia) serta menghubungkannya melalui create_engine("sqlite:///inventaris.db"). Lima objek data produk yang mencakup kelima tipe data berbeda kemudian ditambahkan ke dalam sesi basis data menggunakan metode session.add() dan disimpan secara permanen melalui perintah session.commit().
 
-## 3. 
+## 3. Buat Endpoint RESTful API
+Service.py : <br>
+
+<img src="images/14-pert 08.png" width="700"> <br>
+
+Server Uvicorn : <br>
+
+<img src="images/13-pert 08.png" width="700"> <br>
+
+Pembahasan : 
+
+Pada tahap ketiga tugas, berkas service.py diperbarui menggunakan kerangka kerja FastAPI dan SQLModel untuk membangun layanan RESTful API yang terhubung ke basis data tugas inventaris.db. Struktur tabel produk dipetakan melalui kelas model Produk beserta keenam atributnya (id, kode, nama, stok, harga, dan tersedia), sedangkan manajemen koneksi ke SQLite ditangani oleh fungsi get_session. Sebuah endpoint HTTP GET didaftarkan pada rute /produk/ melalui fungsi read_produk() yang menjalankan perintah kueri select(Produk) untuk mengambil dan mengembalikan seluruh daftar produk dari tabel dalam format JSON. <br>
+
+## 4. Tampilkan Hasil dengan curl
+
+Web : <br>
+
+<img src="images/15-pert 08.png" width="700"> <br>
+
+Pretty-print : <br>
+
+<img src="images/16-pert 08.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Layanan API kemudian dijalankan secara lokal menggunakan server Uvicorn (uvicorn service:app --reload) pada alamat [http://127.0.0.1:8000](http://127.0.0.1:8000). Pengujian awal melalui peramban web (browser) dengan mengakses alamat [http://127.0.0.1:8000/produk/](http://127.0.0.1:8000/produk/) menghasilkan status respons 200 OK pada log server dan menampilkan kelima data produk dalam format JSON mentah (raw). Setelah opsi Pretty-print pada peramban diaktifkan, data JSON tersebut diformat secara berjenjang dan rapi, yang memverifikasi bahwa seluruh data dengan lima tipe data berbeda (bilangan bulat, karakter, desimal, dan boolean) telah berhasil disajikan oleh endpoint dengan akurat.
+
+# KESIMPULAN
+
+Praktikum Modul 8 mengenai pembangunan layanan berbasis microservices telah berhasil dilaksanakan dengan mengintegrasikan basis data relasional SQLite bersama kerangka kerja FastAPI dan ORM SQLModel menggunakan bahasa pemrograman Python. Melalui tahapan latihan maupun pengerjaan tugas mandiri (inventaris.db dengan tabel produk), dapat ditarik beberapa poin kesimpulan utama:
+
+- Pemodelan Basis Data dan ORM: SQLite mampu menyimpan skema tabel dengan beragam tipe data (INTEGER PRIMARY KEY, CHAR, VARCHAR, INT, FLOAT, dan BOOLEAN) secara ringan dalam satu berkas lokal, sementara pustaka SQLModel mempermudah pemetaan struktur tabel SQLite ke dalam kelas objek Python sehingga proses penyisipan data secara terprogram (seed.py) maupun pembacaan data menjadi lebih terstruktur dan aman dari kesalahan sintaks SQL.
+- Penyajian Layanan RESTful API: Penggunaan FastAPI dan server ASGI Uvicorn memungkinkan pembuatan endpoint HTTP GET (/sdm/ dan /produk/) secara ringkas dan cepat, di mana data yang diambil dari basis data otomatis diserialisasi ke dalam format standar pertukaran data JSON dengan respons status 200 OK.
+- Verifikasi Klien dan Interoperabilitas: Layanan REST API yang berjalan pada server lokal ([http://127.0.0.1:8000](http://127.0.0.1:8000)) terbukti dapat diakses dan diverifikasi secara konsisten oleh berbagai jenis klien (client-agnostic), baik melalui peramban web (browser) dengan bantuan fitur Pretty-print untuk mempermudah pembacaan struktur data maupun melalui antarmuka baris perintah menggunakan utilitas curl.
