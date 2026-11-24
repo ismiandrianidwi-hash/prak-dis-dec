@@ -210,5 +210,27 @@ Layanan REST API dibangun menggunakan bahasa Python dengan pustaka FastAPI dan S
 
  Pengujian layanan dilakukan dengan mengakses rute endpoint secara spesifik melalui alamat [http://127.0.0.1:8000/sdm/](http://127.0.0.1:8000/sdm/) (atau http://localhost:8000/sdm/) pada peramban web (browser). Penambahan path /sdm/ diperlukan karena alamat utama (127.0.0.1:8000) tidak memiliki endpoint terdaftar sehingga akan mengembalikan respons {"detail":"Not Found"}. Ketika rute /sdm/ diakses, server merespons dengan mengirimkan seluruh data karyawan dalam format JSON mentah, dan dengan mengaktifkan fitur Pretty-print pada browser, struktur data JSON tersebut ditampilkan secara terformat dan berjenjang sehingga mudah dibaca dan diverifikasi.
 
+# TUGAS
+## 1. Buat Tabel Baru di SQLite
 
+ <img src="images/10-pert 08.png" width="700"> <br>
 
+Pembahasan : <br>
+
+Pada tahap pertama tugas, dibuat sebuah berkas basis data SQLite baru bernama inventaris.db untuk menyimpan data inventaris barang. Di dalam basis data tersebut, dibentuk tabel baru bernama produk menggunakan perintah SQL CREATE TABLE yang dirancang berbeda dari contoh modul dengan mengimplementasikan satu primary key serta lima tipe data berbeda sesuai ketentuan tugas. Struktur tabel ini terdiri atas kolom id bertipe INTEGER PRIMARY KEY sebagai kunci utama unik yang bertambah otomatis, kode bertipe CHAR(6) untuk menyimpan kode unik produk sepanjang 6 karakter tetap, nama bertipe VARCHAR(50) untuk nama produk maksimal 50 karakter dinamis, stok bertipe INT untuk jumlah stok dalam bilangan bulat, harga bertipe FLOAT untuk nominal harga dalam bilangan desimal, serta tersedia bertipe BOOLEAN untuk menandai status ketersediaan barang. Keberhasilan pembuatan tabel ini kemudian diverifikasi melalui perintah .tables pada antarmuka SQLite yang memastikan bahwa tabel produk telah terdaftar dan siap digunakan pada tahap pengisian data berikutnya.
+
+## 2. Isi 5 Data Menggunakan Script Python
+
+ Kode Program Seed.py : <br>
+
+  <img src="images/11-pert 08.png" width="700"> <br>
+
+Jalankan skrip diatas melalui terminal PowerShell: <br>
+
+<img src="images/12-pert 08.png" width="700"> <br>
+
+Pembahasan : <br>
+
+Pada tahap kedua, pengisian lima baris data ke dalam tabel produk pada basis data inventaris.db dilakukan secara terprogram menggunakan skrip Python (seed.py) dengan memanfaatkan pustaka SQLModel. Skrip ini mendefinisikan kelas model Produk untuk memetakan struktur tabel SQLite ke dalam objek Python (id, kode, nama, stok, harga, dan tersedia) serta menghubungkannya melalui create_engine("sqlite:///inventaris.db"). Lima objek data produk yang mencakup kelima tipe data berbeda kemudian ditambahkan ke dalam sesi basis data menggunakan metode session.add() dan disimpan secara permanen melalui perintah session.commit().
+
+## 3. 
