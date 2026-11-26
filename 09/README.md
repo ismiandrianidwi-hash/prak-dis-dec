@@ -38,6 +38,8 @@ SQLite adalah mesin basis data relasional tanpa server (serverless) yang menyimp
 
 <img src="images/01-per 09.png" width="700"> <br>
 
+<img src="images/02-per 09.png" width="700"> <br>
+
 Pembahasan : <br>
 
 Pada tahap awal praktikum di dalam direktori kerja ~/OneDrive/Desktop/prak-dis-dec/09, dilakukan pembentukan struktur direktori proyek menggunakan perintah mkdir -p src/graphql/server src/graphql/client src/grpc/server src/grpc/client. Opsi -p (parents) digunakan agar sistem secara otomatis membuat direktori induk src beserta subdirektori turunan untuk layanan server dan client pada masing-masing arsitektur GraphQL dan gRPC dalam satu kali eksekusi perintah. Pemisahan direktori ini bertujuan agar konfigurasi lingkungan virtual (uv venv) serta dependensi paket setiap komponen dapat terisolasi dan dikelola secara mandiri sesuai standar arsitektur microservices. <br>
